@@ -446,7 +446,8 @@ a:focus, a:hover {
 }
 
 .single-page-header {
-  background: #1f2532;
+  background: rgb(255,255,255);
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(100,237,255,1) 35%, rgba(0,46,255,1) 100%);
   padding: 50px 0;
   text-align: center;
   color: #fff;
@@ -468,7 +469,9 @@ a:focus, a:hover {
 
 .navigation {
   transition: .3s all;
-  background: #1f2532;
+  background: rgb(255,255,255);
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(100,237,255,1) 35%, rgba(0,46,255,1) 100%);
+
 }
 
 .top-bar {
@@ -583,7 +586,8 @@ a:focus, a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #1f2532;
+  background: rgb(255,255,255);
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(100,237,255,1) 35%, rgba(0,46,255,1) 100%);
 }
 
 @media (max-width: 480px) {
