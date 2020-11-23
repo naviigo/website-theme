@@ -1512,6 +1512,7 @@ a:focus, a:hover {
 
 .post-item .post-title h3 {
   font-size: 23px;
+  height: 50px;
 }
 
 .post-item .post-title h3 a {
@@ -1531,6 +1532,7 @@ a:focus, a:hover {
 .post-item .post-content p {
   color: #757575;
   margin: 10px 0;
+  height: 80px;
 }
 
 .post-item .btn-main, .post-item .btn-main-sm {
