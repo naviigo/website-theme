@@ -1459,6 +1459,7 @@ a:focus, a:hover {
 
 .testimonial .item .client-details {
   padding-bottom: 30px;
+  height: 200px;
 }
 
 .testimonial .item .client-details p {
