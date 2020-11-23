@@ -1482,7 +1482,8 @@ a:focus, a:hover {
   display: inline-block;
   border-radius: 100%;
   width: 90px;
-  height: auto;
+  height: 90px;
+  object-fit:cover;
 }
 
 /*=================================================================
