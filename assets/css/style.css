@@ -1424,7 +1424,7 @@ a:focus, a:hover {
   -webkit-text-fill-color: transparent;
 }
 
-.team-member .member-content ul li a::hover {
+.team-member .member-content ul li a:hover {
   background-color: #6cb670;
   border: 1px solid transparent;
 }
@@ -1437,6 +1437,9 @@ a:focus, a:hover {
 
 .team-member .member-photo img {
   transition: all 0.6s ease 0s;
+  width: 255px;
+  height: 255px;
+  object-fit:cover;
 }
 
 /*=================================================================
