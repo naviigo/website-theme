@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    {{ with .Page }}
-    <title>{{ .Site.Title }}</title>
-    <meta name="marco" content="asd"/>
-    {{ else }}
+    <!-- Hardcoded part. TODO: please fix this -->
     <title>Naviigo</title>
-    {{ end }}
+    <meta name="description" content="Naviigo SLOGAN"/>
+    <!-- End -->
     <link rel="canonical" href="{{ .Permalink }}"/>
     <meta name="robots" content="noindex">
     <meta charset="utf-8"/>
