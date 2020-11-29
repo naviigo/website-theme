@@ -3,7 +3,7 @@
   --color-blu: #1294e5;
   --color-light-blu: #24dbfb;
   --color-select: #1294e5;
-  --color-hover: rgba(7, 61, 248, 0.9);
+  --color-hover: #1294e590;
 }
 body {
   line-height: 1.4;
