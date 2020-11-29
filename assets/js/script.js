@@ -181,7 +181,7 @@ $(window).on("load", function () {
 			});
 
 			let posting = $.post({
-				url: "http://docs.google.com/forms/d/e/1FAIpQLSfffIRVPy433QSfmOGf74VBrQ5BSGTNoLA2EnNxhMoYpidg_g/" +
+				url: "https://docs.google.com/forms/d/e/1FAIpQLSfffIRVPy433QSfmOGf74VBrQ5BSGTNoLA2EnNxhMoYpidg_g/" +
 					"formResponse?entry.1453226885=" + name + "&" +
 					"entry.1086317574=" + email + "&" +
 					"entry.993158506=" + subject + "&" +
