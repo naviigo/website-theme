@@ -5,7 +5,7 @@
 {{ with .Site.Params.author }} <meta name="author" content="{{ . }}">{{ end }}
 
 
-<title>{{ .Title }}</title>
+<title>{{ .Site.Title }} | {{ .Title }}</title>
 
 {{ "<!-- Mobile Specific Meta -->" | safeHTML }}
 <meta name="viewport" content="width=device-width, initial-scale=1">
