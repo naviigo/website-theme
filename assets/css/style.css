@@ -155,7 +155,7 @@ a:focus, a:hover {
 }
 
 #preloader {
-  background-image: url('/images/logo-loading.png'), var(--color-light-blu);
+  background: var(--color-light-blu) url('/images/logo-loading.png') center center no-repeat;
   height: 100%;
   background-repeat: no-repeat;
   background-size: contain;
