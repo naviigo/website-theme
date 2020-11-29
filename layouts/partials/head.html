@@ -2,7 +2,8 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
-{{ with .Site.Params.author }} <meta name="author" content="{{ . }}">{{ end }}
+<meta name="image" content="/images/logo-loading.png">
+{{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
 
 
 <title>{{ .Site.Title }} | {{ .Title }}</title>
