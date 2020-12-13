@@ -41,19 +41,20 @@
                             </li>
                             {{ end }}
                             {{ end }}
+                            <!-- Language dropdown -->
+                            <li class="dropdown nav-item">
+                                <a class="dropbtn nav-link"><img src='/images/logos/lang-{{ .Site.Language }}.gif' alt="IMAGE" style="margin-bottom: 4px"/>
+                                    {{ i18n "select-language"}}
+                                </a>
+                                <div class="dropdown-content">
+                                    {{ range .Site.Params.listeLangues }}
+                                    {{ partial "flags.html" (dict "site" $.Site "liste" .) }}
+                                    {{ end }}
+                                </div>
+                            </li>
                         </ul>
                     </div>
-                    <!-- Language dropdown -->
-                    <div class="dropdown">
-                        <button class="dropbtn"><img src='/images/logos/lang-{{ .Site.Language }}.gif' alt="IMAGE" style="margin-bottom: 4px"/>
-                            {{ i18n "select-language"}}
-                        </button>
-                        <div class="dropdown-content">
-                            {{ range .Site.Params.listeLangues }}
-                            {{ partial "flags.html" (dict "site" $.Site "liste" .) }}
-                            {{ end }}
-                        </div>
-                    </div>
+
                 </nav>
             </div>
         </div>
