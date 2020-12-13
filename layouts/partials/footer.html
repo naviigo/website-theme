@@ -4,8 +4,51 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-3 col-md-3 col-lg-3">
+                    <!--
                     <h3>{{ .Site.Params.footerAboutTitle }}</h3>
                     {{ with .Site.Params.footerDescription }}<p>{{ . }}</p>{{ end }}
+                    -->
+                    <div class="social-icons-block contact-meta-block-footer">
+                        <i class="tf-ion-ios-contact-outline"></i>
+                        <h4>{{ i18n "social" }}</h4>
+                        <ul class="list-inline social-icon">
+                            {{ with .Site.Params.contact.facebook }}
+                            <li class="list-inline-item">
+                                <a href="{{.}}">
+                                    <i class="tf-ion-social-facebook"></i>
+                                </a>
+                            </li>
+                            {{ end }}
+                            {{ with .Site.Params.contact.twitter }}
+                            <li class="list-inline-item">
+                                <a href="{{.}}">
+                                    <i class="tf-ion-social-twitter"></i>
+                                </a>
+                            </li>
+                            {{ end }}
+                            {{ with .Site.Params.contact.linkedin }}
+                            <li class="list-inline-item">
+                                <a href="{{.}}">
+                                    <i class="tf-ion-social-linkedin"></i>
+                                </a>
+                            </li>
+                            {{ end }}
+                            {{ with .Site.Params.contact.dribbble }}
+                            <li class="list-inline-item">
+                                <a href="{{.}}">
+                                    <i class="tf-ion-social-dribbble"></i>
+                                </a>
+                            </li>
+                            {{ end }}
+                            {{ with .Site.Params.contact.instagram }}
+                            <li class="list-inline-item">
+                                <a href="{{.}}">
+                                    <i class="tf-ion-social-instagram"></i>
+                                </a>
+                            </li>
+                            {{ end }}
+                        </ul>
+                    </div>
                 </div>
                 <div class="col-sm-3 col-md-3 col-lg-3">
                 {{ with .Site.Params.footerServiceEnable }}

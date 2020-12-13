@@ -933,6 +933,18 @@ a:focus, a:hover {
   color: white;
 }
 
+.contact-meta-block-footer {
+  text-align: center;
+}
+.contact-meta-block-footer > i {
+  display: block;
+  font-size: 50px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+.contact-meta-block-footer > h4 {
+  color: #ffffff;
+}
 .contact-meta-block {
   margin-top: 30px;
   padding: 40px 0;
