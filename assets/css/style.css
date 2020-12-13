@@ -5,7 +5,8 @@
     --color-light-blu: #24dbfb;
     --color-select: #1294e5;
     --color-hover: #1294e590;
-    --color-navbar: #707d8f;
+    --color-navbar: #4c4c4c;
+    --color-grey: #777;
 }
 
 body {
@@ -16,7 +17,7 @@ body {
 
 p {
     font-family: "Titillium Web", sans-serif;
-    color: #9a9a9a;
+    color: var(--color-grey);
     font-size: 15px;
 }
 
@@ -388,7 +389,7 @@ a:focus, a:hover {
 }
 
 .color-gray {
-    color: #777;
+    color: var(--color-navbar);
 }
 
 .shadow {
@@ -1084,7 +1085,6 @@ a:focus, a:hover {
 }
 
 .portfolio-filter button {
-    font-weight: 500;
     cursor: pointer;
     display: inline-block;
     font-size: 14px;
@@ -1093,7 +1093,7 @@ a:focus, a:hover {
     font-weight: 600;
     text-transform: uppercase;
     border: none;
-    color: #777;
+    color: var(--color-grey);
     outline: none;
     background: none;
 }
@@ -1213,7 +1213,7 @@ a:focus, a:hover {
 }
 
 .services .service-block p {
-    color: #777;
+    color: var(--color-grey);
 }
 
 /*=================================================================
@@ -1418,7 +1418,7 @@ a:focus, a:hover {
 }
 
 .team-member .member-content p {
-    color: #777;
+    color: var(--color-grey);
     margin-top: 10px;
     padding: 0 15px;
 }
@@ -1848,6 +1848,7 @@ a:focus, a:hover {
 .dropdown {
     position: relative;
     display: inline-block;
+    border-radius: 15px;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -1879,10 +1880,9 @@ a:focus, a:hover {
     border-top-right-radius: 15px;
 }
 
-
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-    background-color: #ddd;
+    background-color: var(--color-hover);
 }
 
 /* Show the dropdown menu on hover */
@@ -1890,5 +1890,7 @@ a:focus, a:hover {
     display: block;
 }
 
-/* Change the background color of the dropdown button when the dropdown content is shown
-.dropdown:hover .dropbtn {background-color: #3e8e41;}*/
+/* Change the background color of the dropdown button when the dropdown content is shown*/
+.dropdown:hover .dropbtn {
+    color: var(--color-select);
+}
