@@ -936,7 +936,12 @@ a:focus, a:hover {
     height: 400px;
     color: white;
 }
-
+@media (max-width: 480px) {
+    .contact-meta-block-footer {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+}
 .contact-meta-block-footer {
     text-align: center;
 }
@@ -1743,6 +1748,14 @@ a:focus, a:hover {
 /*=================================================================
   Footer section
 ==================================================================*/
+@media (max-width: 480px) {
+    .top-footer {
+        background-color: #222222;
+        border-top: 1px solid #404040;
+        padding: 20px 0 50px;
+    }
+}
+
 .top-footer {
     background-color: #222222;
     border-top: 1px solid #404040;
