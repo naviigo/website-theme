@@ -10,7 +10,7 @@
                     <h2>{{.}}</h2>
                     <span class="border"></span>
                     {{ end }}
-                    {{ with .Site.Params.contact.subtitle }}<p>{{.}}</p>{{ end }}
+                    {{ with .Site.Params.contact.subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
                 </div>
             </div>
         </div>
