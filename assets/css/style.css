@@ -423,8 +423,12 @@ a:focus, a:hover {
     text-align: center;
 }
 
+.nav-item {
+    white-space: nowrap;
+}
 .commonTab .nav-tabs .nav-item {
     margin: 0 3px;
+    white-space: nowrap;
 }
 
 .commonTab .nav-tabs .nav-item .nav-link {
@@ -479,6 +483,7 @@ a:focus, a:hover {
 .navigation {
     transition: .3s all;
     background-image: url("../images/home-banner-bg.jpg");
+    background-repeat: no-repeat;
 }
 
 .top-bar {
@@ -888,6 +893,10 @@ a:focus, a:hover {
 
 .contact-details .contact-short-info li {
     margin-bottom: 6px;
+}
+
+.social-icon {
+    display: inline-block;
 }
 
 .social-icon li {
@@ -1750,6 +1759,13 @@ a:focus, a:hover {
 /*=================================================================
   Footer section
 ==================================================================*/
+
+.top-footer {
+    background-color: #222222;
+    border-top: 1px solid #404040;
+    padding: 100px 0 80px;
+}
+
 @media (max-width: 480px) {
     .top-footer {
         background-color: #222222;
@@ -1758,11 +1774,6 @@ a:focus, a:hover {
     }
 }
 
-.top-footer {
-    background-color: #222222;
-    border-top: 1px solid #404040;
-    padding: 100px 0 80px;
-}
 
 .top-footer h3 {
     font-size: 16px;
