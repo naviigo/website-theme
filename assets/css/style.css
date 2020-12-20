@@ -459,9 +459,11 @@ a:focus, a:hover {
     background: url("../images/pricing-bg.jpg");
     background-size: cover;
 }
-
+.page-title{
+    color: var(--color-navbar)
+}
 .single-page-header {
-    padding: 50px 0;
+    padding: 20px 0;
     text-align: center;
     color: #fff;
     position: relative;
