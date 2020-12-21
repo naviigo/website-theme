@@ -23,7 +23,12 @@
             <div class="row justify-content-center">
                 {{ range $index,  $element:= .item }}
                     <div class="col-md-4 col-sm-6 p-0">
-                        <div class="service-item text-center">
+                        <div class="service-item text-center"
+
+                         {{ with .image }}
+                            style="background-image:url('{{ . | relURL }}'); background-size: contain; background-repeat: no-repeat; background-position: center"
+                        {{ end }}
+                        >
                             {{ with .number }}
                                 <span class="count">{{ . }}.</span>
                             {{ end }}
@@ -34,7 +39,7 @@
                                 <h4>{{ . }}</h4>
                             {{ end }}
                             {{ with .description }}
-                                <p>{{ . }}</p>
+                                <p>{{ . | truncate 90 }}</p>
                             {{ end }}
                         </div>
                     </div>

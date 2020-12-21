@@ -1256,6 +1256,7 @@ a:focus, a:hover {
 }
 
 .service-2 .service-item {
+    height: 100%;
     background: #fff;
     border: 1px solid #eee;
     padding: 50px 20px;
