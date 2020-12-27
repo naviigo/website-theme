@@ -2,46 +2,22 @@
 {{ with $data.about }}
     {{ if .enable }}
     {{ "<!-- About Section Start -->" | safeHTML }}
-    {{ $class :=  "img-fluid rounded" }}
-    {{ if .shadow }}
-        {{ $class := "img-fluid rounded shadow"}}
-    {{ end }}
     <section class="about section-xs bg-gray" id="about">
         <div class="container">
             {{ range .item }}
-            {{ $.Scratch.Set "height" "" }}
-            {{ with .height }}
-                {{ $.Scratch.Set "height" (print "height:" . "px") }}
-            {{ end }}
-            {{ if .positionRight }}
-                    <div class="row mt-50 justify-content-center">
-                        <div class="col-md-5 col-md-5 col-sm-12 offset-md-1">
-                            <div class="content">
-                                <h2>{{ .title }}</h2>
-                                <p>
-                                    {{ .description }}
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-5 col-sm-12 text-center">
-                            <img src="{{ .image | absURL }}" class="{{ $class }}" style='{{ $.Scratch.Get "height"}}' alt="about-image">
-                        </div>
+            <div class="row mt-50 justify-content-center" {{ if .positionRight }} style="flex-direction: row-reverse;" {{end }}>
+                <div class="col-md-6 col-sm-12">
+                    <div class="content">
+                        <h2>{{ .title | markdownify }}</h2>
+                        <p>
+                            {{ .description | markdownify }}
+                        </p>
                     </div>
-                {{ else }}
-                    <div class="row mb-50 justify-content-center">
-                        <div class="col-md-5 col-sm-12 text-center offset-md-1">
-                            <img src="{{ .image | absURL }}" class="{{ $class }}" style='{{ $.Scratch.Get "height"}}' alt="about-image">
-                   </div>
-                        <div class="col-md-5 col-sm-12">
-                            <div class="content">
-                                <h2>{{ .title }}</h2>
-                                <p>
-                                    {{ .description }}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                {{ end }}
+                </div>
+                <div class="col-12 col-md-6 col-sm-12 text-center">
+                    <img src="{{ .image | absURL }}" class="img-fluid rounded {{ if .shadow }}shadow{{ end }}" {{ with .height }} style='{{ print "height:" . "px"}}' {{ end }} alt="about-image">
+                </div>
+            </div>
             {{ end }}
         </div>
     </section>
