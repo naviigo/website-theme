@@ -10,9 +10,14 @@
                     {{ "<!-- Single Feature Item -->" | safeHTML }}
                     <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="service-block color-bg text-center">
+                            {{ with .icon }}
                             <div class="service-icon text-center">
-                                <i class="{{ .icon }}"></i>
+                                <i class="{{ . }}"></i>
                             </div>
+                            {{ end }}
+                            {{ with .image }}
+                                <img src="{{ . | absURL }}" class="img-fluid rounded shadow" alt="feature-image">
+                            {{ end }}
                             <h3>{{ .title }}</h3>
                             <p>{{ .description }}</p>
                         </div>
