@@ -6,7 +6,7 @@
     {{ if .shadow }}
         {{ $class := "img-fluid rounded shadow"}}
     {{ end }}
-    <section class="about section-sm" id="about">
+    <section class="about section-xs bg-gray" id="about">
         <div class="container">
             {{ range .item }}
             {{ $.Scratch.Set "height" "" }}
