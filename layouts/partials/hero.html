@@ -19,10 +19,18 @@
                     {{ with .Site.Params.hero.description }}
                         <p>{{ . }}</p>
                     {{ end }}
-                    {{ if .Site.Params.hero.button }}
+                    {{ if .Site.Params.feature.hero.button }}
                         <ul class="list-inline wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".7s">
                             <li class="list-inline-item">
                                 <a href="{{ with .Site.Params.hero.btnURL }}{{.}}{{ end }}" target="_blank" class="btn btn-main">{{ with .Site.Params.hero.btnText }}{{.}}{{ end }}</a>
+                            </li>
+                        </ul>
+                    {{ end }}
+                    {{ if .Site.Params.feature.hero.badges }}
+                        <ul class="list-inline wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".7s" style="margin-top: 10rem;">
+                            <li class="list-inline-item">
+                                <a href="{{ with .Site.Params.hero.badgeiOS }}{{ . | absURL }}{{ end }}" target="_blank" ><img style="height: 3rem;" src="/images/app-store-soon.png"/></a>
+                                <a href="{{ with .Site.Params.hero.badgeAndroid }}{{ . | absURL }}{{ end }}" target="_blank" ><img style="height: 3rem;" src="/images/google-play.png"/></a>
                             </li>
                         </ul>
                     {{ end }}
