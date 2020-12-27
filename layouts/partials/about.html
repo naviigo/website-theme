@@ -16,14 +16,21 @@
                             </div>
                         </div>
                         <div class="col-12 col-md-5 col-sm-12 text-center">
-                            <img src="{{ .image | absURL }}" class="img-fluid rounded shadow" alt="about-image">
+                            {{ if .shadow }}
+                                <img src="{{ .image | absURL }}" class="img-fluid rounded shadow" alt="about-image">
+                            {{ else }}
+                                <img src="{{ .image | absURL }}" class="img-fluid rounded" alt="about-image">
+                            {{ end }}
                         </div>
                     </div>
                 {{ else }}
                     <div class="row mb-50 justify-content-center">
                         <div class="col-md-5 col-sm-12 text-center offset-md-1">
+                            {{ if .shadow }}
                             <img src="{{ .image | absURL }}" class="img-fluid rounded shadow" alt="about-image">
-                        </div>
+                            {{ else }}
+                            <img src="{{ .image | absURL }}" class="img-fluid rounded" alt="about-image">
+                            {{ end }}                        </div>
                         <div class="col-md-5 col-sm-12">
                             <div class="content">
                                 <h2>{{ .title }}</h2>
