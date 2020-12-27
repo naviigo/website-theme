@@ -1270,21 +1270,24 @@ a:focus, a:hover {
     position: absolute;
     top: 0;
     left: 20px;
-    color: #f3f1f1;
+    color: #e5e4e4;
     font-weight: 700;
 }
 
 .service-2 .service-item i {
-    font-size: 30px;
+    font-size: 50px;
     display: inline-block;
-    border-radius: 30px;
+    border-radius: 90px;
     box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.1);
     color: #fff;
-    height: 55px;
-    line-height: 55px;
+    height: 100px;
+    line-height: 95px;
     margin-bottom: 20px;
-    width: 55px;
+    width: 100px;
     transition: all 0.3s ease 0s;
+}
+.service-2 .service-item p {
+    font-size: 18px;
 }
 
 .service-list .block {
