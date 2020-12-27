@@ -18,7 +18,7 @@ body {
 p {
     font-family: "Titillium Web", sans-serif;
     color: var(--color-grey);
-    font-size: 15px;
+    font-size: 18px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -761,6 +761,13 @@ a:focus, a:hover {
 .about .content {
     padding: 50px 0;
 }
+.markdown-big strong {
+    font-size: 35px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    line-height: 1;
+    color: var(--color-navbar);
+}
 .about .content h2 p{
     font-size: 40px;
     margin-top: 0px;
@@ -1292,9 +1299,6 @@ a:focus, a:hover {
     margin-bottom: 20px;
     width: 100px;
     transition: all 0.3s ease 0s;
-}
-.service-2 .service-item p {
-    font-size: 18px;
 }
 
 .service-list .block {
