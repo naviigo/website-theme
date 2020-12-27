@@ -1,6 +1,7 @@
+{{ if .Site.Params.feature.feature.enable }}
+
 {{ $data := index .Site.Data .Site.Language.Lang }}
 {{ with $data.feature }}
-    {{ if .enable }}
     {{ "<!-- Feature Section Start -->" | safeHTML }}
     <section class="services section-xs" id="services">
         <div class="container">

@@ -1,23 +1,25 @@
-{{ $data := index .Site.Data .Site.Language.Lang }}
-{{ with $data.team }}
-    {{ if .enable }}
+{{ if .Site.Params.feature.team.enable }}
+
+    {{ $data := index .Site.Data .Site.Language.Lang }}
+
     {{ "<!-- Team Section Start -->" | safeHTML }}
     <section class="team section bg-gray" id="team">
         <div class="container">
             <div class="row">
                 <div class="col">
                     <div class="title text-center">
-                        {{ with .topTitle }}<h4>{{ . }}</h4>{{ end }}
-                        {{ with .title }}
+                        {{ with $data.team.topTitle }}<h4>{{ . }}</h4>{{ end }}
+                        {{ with $data.team.title }}
                             <h2>{{ . }}</h2>
                             <span class="border"></span>
                         {{ end }}
-                        {{ with .subtitle }}<p>{{ . }}</p>{{ end }}
+                        {{ with $data.team.subtitle }}<p>{{ . }}</p>{{ end }}
                     </div>
                 </div>
             </div>
             <div class="row justify-content-center">
-                {{ range .member }}
+                {{ $enableTitles := .Site.Params.feature.team.enableTitles }}
+                {{ range $data.team.member }}
                     {{ "<!-- team member -->" | safeHTML }}
                     <div class="col-12 col-md-3 col-sm-6">
                         <div class="team-member text-center">
@@ -27,7 +29,9 @@
                             {{ "<!-- member name & designation -->" | safeHTML }}
                             <div class="member-content">
                                 <h3>{{ .name }}</h3>
+                                {{ if $enableTitles }}
                                 <span>{{ .designation }}</span>
+                                {{ end }}
                                 <p>{{ .description }}</p>
                                 <ul class="list-inline">
                                     {{ with .facebookURL }}
@@ -69,5 +73,4 @@
         </div>
     </section>
     {{ "<!-- End section -->" | safeHTML }}
-    {{ end }}
 {{ end }}
