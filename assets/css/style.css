@@ -406,6 +406,10 @@ a:focus, a:hover {
 .shadow {
     box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.34);
 }
+
+.h300{
+    height: 300px;
+    }
 .marginBottom {
     margin-bottom: 2rem;
 }
