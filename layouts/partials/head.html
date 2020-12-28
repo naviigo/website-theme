@@ -31,9 +31,14 @@
 <link rel="stylesheet" href="{{ `plugins/slick-carousel/slick/slick.css` | absURL }}">
 <link rel="stylesheet" href="{{ `plugins/slick-carousel/slick/slick-theme.css` | absURL }}">
 {{ "<!-- Main Stylesheet -->" | safeHTML }}
-<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
+
+{{ $map := resources.Get "js/ol.js"}}
+<script type="module" src="{{ $map.Permalink }}"></script>
 
 {{ $styles := resources.Get "css/style.css" | minify}}
+<link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
+
+{{ $styles := resources.Get "css/map.css" | minify}}
 <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
 
 {{ $map := resources.Get "js/map.js" | minify}}

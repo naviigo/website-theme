@@ -3,7 +3,7 @@ const source = new ol.source.Vector({
     format: new ol.format.GeoJSON(),
 });
 
-var style = new ol.style.Style({
+const style = new ol.style.Style({
     fill: new ol.style.Fill({
         color: 'rgba(7, 89, 255, 0.6)',
     }),
@@ -22,25 +22,25 @@ var style = new ol.style.Style({
         }),
     }),
 });
-var vectorLayer = new ol.layer.Vector({
+const vectorLayer = new ol.layer.Vector({
     source: source,
     style: style,
 });
-var view = new ol.View({
-    center: ol.proj.fromLonLat([8.951754513129218,46.003386272217334]),
+const view = new ol.View({
+    center: ol.proj.fromLonLat([8.951754513129218, 46.003386272217334]),
     zoom: 10,
 });
 
-var map = new ol.Map({
+const map = new ol.Map({
     layers: [
         new ol.layer.Tile({
             source: new ol.source.OSM(),
-        }), vectorLayer ],
-    target: 'openMap',
+        }), vectorLayer],
+    target: 'map',
     view: view,
 });
 
-var geolocation = new ol.Geolocation({
+const geolocation = new ol.Geolocation({
     // enableHighAccuracy must be set to true to have the heading value.
     trackingOptions: {
         enableHighAccuracy: true,
@@ -51,12 +51,12 @@ var geolocation = new ol.Geolocation({
 geolocation.setTracking(true);
 
 
-var accuracyFeature = new ol.Feature();
+const accuracyFeature = new ol.Feature();
 geolocation.on('change:accuracyGeometry', function () {
     accuracyFeature.setGeometry(geolocation.getAccuracyGeometry());
 });
 
-var positionFeature = new ol.Feature();
+const positionFeature = new ol.Feature();
 positionFeature.setStyle(
     new ol.style.Style({
         image: new ol.style.Circle({
@@ -73,7 +73,7 @@ positionFeature.setStyle(
 );
 
 geolocation.on('change:position', function () {
-    var coordinates = geolocation.getPosition();
+    const coordinates = geolocation.getPosition();
     positionFeature.setGeometry(coordinates ? new ol.geom.Point(coordinates) : null);
 });
 

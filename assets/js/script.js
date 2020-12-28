@@ -251,7 +251,7 @@ function initialize() {
 		}
 
 	}
-	map = new google.maps.Map(document.getElementById('map'), mapOptions);
+	map = new google.maps.Map(document.getElementById('gmap'), mapOptions);
 
 	// SET THE MAP TYPE
 	var mapType = new google.maps.StyledMapType(style, {
