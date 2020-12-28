@@ -36,6 +36,6 @@
 {{ $styles := resources.Get "css/style.css" | minify}}
 <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
 
-{{ $map := resources.Get "js/map.js"}}
+{{ $map := resources.Get "js/map.js" | minify}}
 <script type="module" src="{{ $map.Permalink }}"></script>
 </head>
