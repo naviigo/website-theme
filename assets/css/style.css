@@ -20,6 +20,7 @@ p {
     color: var(--color-grey);
     font-size: 18px;
 }
+
 @media (max-width: 480px) {
     p {
         font-family: "Questrial-Regular", sans-serif;
@@ -27,6 +28,7 @@ p {
         font-size: 16px;
     }
 }
+
 h1, h2, h3, h4, h5, h6 {
     font-family: "Questrial-Regular", sans-serif;
     font-weight: 600;
@@ -45,11 +47,6 @@ ol, ul {
     margin: 0;
     padding: 0;
     list-style: none;
-}
-
-.availaibility ol, .availaibility ul {
-    margin: 2rem;
-    list-style: unset;
 }
 
 figure {
@@ -354,9 +351,12 @@ a:focus, a:hover {
 .title h2 {
     font-size: 35px;
     color: #232323;
-    text-transform: capitalize;
     margin-bottom: 8px;
     font-weight: 700;
+}
+
+.title h2:first-letter {
+    text-transform: uppercase;
 }
 
 .title h4 {
@@ -407,9 +407,29 @@ a:focus, a:hover {
     box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.34);
 }
 
-.h300{
+.h300 {
     height: 300px;
-    }
+}
+
+.h150 {
+    height: 150px;
+}
+
+.h50 {
+    height: 50px;
+}
+.w300 {
+    width: 300px;
+}
+
+.w150 {
+    width: 150px;
+}
+
+.w50 {
+    width: 50px;
+}
+
 .marginBottom {
     margin-bottom: 2rem;
 }
@@ -444,6 +464,7 @@ a:focus, a:hover {
 .nav-item {
     white-space: nowrap;
 }
+
 .commonTab .nav-tabs .nav-item {
     margin: 0 3px;
     white-space: nowrap;
@@ -477,9 +498,11 @@ a:focus, a:hover {
     background: url("../images/pricing-bg.jpg");
     background-size: cover;
 }
-.page-title{
+
+.page-title {
     color: var(--color-navbar)
 }
+
 .single-page-header {
     padding: 20px 0;
     text-align: center;
@@ -776,6 +799,7 @@ a:focus, a:hover {
 .about .content {
     padding: 50px 0;
 }
+
 .markdown-big strong {
     font-size: 35px;
     margin-top: 0px;
@@ -783,7 +807,8 @@ a:focus, a:hover {
     line-height: 1;
     color: var(--color-navbar);
 }
-.about .content h2 p{
+
+.about .content h2 p {
     font-size: 40px;
     margin-top: 0px;
     margin-bottom: 5px;

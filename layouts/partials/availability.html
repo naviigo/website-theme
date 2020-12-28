@@ -2,23 +2,49 @@
 {{ $data := index .Site.Data .Site.Language.Lang }}
 {{ with $data.availability }}
 {{ "<!-- Start About Section -->" | safeHTML }}
-<section class="about-2 section bg-gray" id="about">
+<section class="section bg-gray" id="about">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-5">
-                {{ with .description }}
+            <div class="col">
+                <div class="title text-center">
+                    {{ with .title }}
                     <h2>{{ . }}</h2>
-                {{ end }}
+                    {{ end }}
+                    <span class="border"></span>
+                </div>
             </div>
-            <div class="col-12 col-md-3 availaibility">
-                <ol>
-                {{ range .item }}
-                    <li>{{ .title | markdownify }}</li>
-                {{ end }}
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <ol class="ml-5">
+                    {{ range .item }}
+                    <li class="mb-3">
+                        <img src="{{ .image | absURL }}" class="img-fluid rounded h50 w50 mr-3" alt="avail-image">
+                        <h6 class="inline-block">{{ .title | markdownify }}</h6>
+                    </li>
+                    {{ end }}
                 </ol>
+                <div class="title text-center">
+                <span class="border"></span>
+                <div>{{ .more | markdownify }}</div>
+                </div>
             </div>
-            <div class="col-12 col-md-4">
-                <img width="100%" src="/images/about/map.png">
+            <div class="col-12 col-md-6">
+                <div id="map" style="height: 400px;width: 100%;" class="map"></div>
+                <script type="text/javascript">
+                    var map = new ol.Map({
+                        target: 'map',
+                        layers: [
+                            new ol.layer.Tile({
+                                source: new ol.source.OSM()
+                            })
+                        ],
+                        view: new ol.View({
+                            center: ol.proj.fromLonLat([37.41, 8.82]),
+                            zoom: 4
+                        })
+                    });
+                </script>
             </div>
         </div>
     </div>
