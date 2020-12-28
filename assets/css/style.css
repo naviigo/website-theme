@@ -41,6 +41,12 @@ ol, ul {
     list-style: none;
 }
 
+.availaibility ol, ul {
+    margin: 0;
+    padding: 0;
+    list-style: unset;
+}
+
 figure {
     margin: 0;
 }

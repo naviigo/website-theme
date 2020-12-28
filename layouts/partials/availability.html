@@ -1,0 +1,28 @@
+{{ if .Site.Params.feature.availability.enable }}
+{{ $data := index .Site.Data .Site.Language.Lang }}
+{{ with $data.availability }}
+{{ "<!-- Start About Section -->" | safeHTML }}
+<section class="about-2 section bg-gray" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-5">
+                {{ with .description }}
+                    <h2>{{ . }}</h2>
+                {{ end }}
+            </div>
+            <div class="col-12 col-md-2 availaibility">
+                <ol>
+                {{ range .item }}
+                    <li>{{ .title | markdownify }}</li>
+                {{ end }}
+                </ol>
+            </div>
+            <div class="col-12 col-md-5">
+                <img width="100%" src="/images/about/map.png">
+            </div>
+        </div>
+    </div>
+</section>
+{{ "<!-- End About section -->" | safeHTML }}
+{{ end }}
+{{ end }}
