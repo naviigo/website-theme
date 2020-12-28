@@ -26,7 +26,7 @@
 {{ "<!-- bootstrap.min css -->" | safeHTML}}
 <link rel="stylesheet" href="{{ `plugins/bootstrap/dist/css/bootstrap.min.css` | absURL }}">
 {{ "<!-- Lightbox.min css -->" | safeHTML }}
-<link rel="stylesheet" href="{{ `plugins/lightbox2/dist/css/lightbox.min.css` | absURL }}">
+<!--<link rel="stylesheet" href="{{ `plugins/lightbox2/dist/css/lightbox.min.css` | absURL }}">-->
 {{ "<!-- Slick Carousel -->" | safeHTML }}
 <link rel="stylesheet" href="{{ `plugins/slick-carousel/slick/slick.css` | absURL }}">
 <link rel="stylesheet" href="{{ `plugins/slick-carousel/slick/slick-theme.css` | absURL }}">
@@ -36,4 +36,6 @@
 {{ $styles := resources.Get "css/style.css" | minify}}
 <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
 
+{{ $map := resources.Get "js/map.js"}}
+<script type="module" src="{{ $map.Permalink }}"></script>
 </head>
