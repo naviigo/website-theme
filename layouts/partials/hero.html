@@ -1,42 +1,46 @@
 {{ if .Site.Params.feature.hero.enable }}
 {{ "<!-- Hero Area -->" | safeHTML }}
+{{ $data := index .Site.Data .Site.Language.Lang }}
+{{ with $data.hero }}
 <section class="hero-area">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
                 <div class="video-player">
-                    <img class="img-fluid rounded" src="{{ with .Site.Params.hero.videoThumb }}{{.| absURL }}{{ end }}" alt="video-thumb">
+                    <img class="img-fluid rounded" src="{{ with .videoThumb }}{{.| absURL }}{{ end }}" alt="video-thumb">
                     <a class="play-icon" href="javascript:void(0)">
-                        <i class="tf-ion-play" data-video="{{ with .Site.Params.hero.videoURL }}{{.}}{{ end }}?autoplay=1"></i>
+                        <i class="tf-ion-play" data-video="{{ with .videoURL }}{{.}}{{ end }}?autoplay=1"></i>
                     </a>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="block">
-                    {{ with .Site.Params.hero.heading }}
-                        <h2>{{ . }}</h2>
+                    {{ with .title }}
+                        <h2>{{ . | markdownify }}</h2>
                     {{ end }}
-                    {{ with .Site.Params.hero.description }}
-                        <p>{{ . }}</p>
+                    {{ with .heading }}
+                        <h3 class="mb-5">{{ . | markdownify }}</h3>
                     {{ end }}
-                    {{ if .Site.Params.feature.hero.button }}
+                    {{ with .description }}
+                        <p>{{ . | markdownify }}</p>
+                    {{ end }}
+                    {{ if $.Site.Params.feature.hero.button }}
                         <ul class="list-inline wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".7s">
                             <li class="list-inline-item">
-                                <a href="{{ with .Site.Params.hero.btnURL }}{{.}}{{ end }}" target="_blank" class="btn btn-main">{{ with .Site.Params.hero.btnText }}{{.}}{{ end }}</a>
+                                <a href="{{ with .btnURL }}{{.}}{{ end }}" target="_blank" class="btn btn-main">{{ with .btnText }}{{.}}{{ end }}</a>
                             </li>
                         </ul>
                     {{ end }}
-                    {{ if .Site.Params.feature.hero.badges }}
-                        <ul class="list-inline wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".7s" style="margin-top: 10rem;">
-                            <li class="list-inline-item">
-                                <a href="{{ with .Site.Params.hero.badgeiOS }}{{ . | absURL }}{{ end }}" target="_blank" ><img style="height: 3rem;" src="/images/app-store-soon.png"/></a>
-                                <a href="{{ with .Site.Params.hero.badgeAndroid }}{{ . | absURL }}{{ end }}" target="_blank" ><img style="height: 3rem;" src="/images/google-play.png"/></a>
-                            </li>
-                        </ul>
+                    {{ if $.Site.Params.feature.hero.badges }}
+                        <div class="mt-50 hero-badge">
+                            <a href="{{ with $.Site.Params.feature.hero.badgeiOS }}{{ . | absURL }}{{ end }}" target="_blank" ><img style="height: 3rem;" src="/images/app-store-soon.png"/></a>
+                            <a class="ml-3" href="{{ with $.Site.Params.hero.feature.badgeAndroid }}{{ . | absURL }}{{ end }}" target="_blank" ><img style="height: 3rem;" src="/images/google-play.png"/></a>
+                        </div>
                     {{ end }}
                 </div>
             </div>
         </div>
     </div>
 </section>
+{{ end }}
 {{ end }}

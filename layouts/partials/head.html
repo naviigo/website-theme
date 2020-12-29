@@ -37,7 +37,7 @@
 {{ $map := resources.Get "js/leaflet.ajax.js"}}
 <script src="{{ $map.Permalink }}"></script>
 
-{{ $styles := resources.Get "css/style.css" | minify}}
+{{ $styles := resources.Get "css/style.css"}}
 <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
 
 {{ $styles := resources.Get "css/leaflet.css" | minify}}
