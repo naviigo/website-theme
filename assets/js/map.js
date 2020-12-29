@@ -26,9 +26,11 @@ function onLocationFound(e) {
     //var radius = e.accuracy / 2;
 
     current_position = L.circleMarker(e.latlng,{
-        color: "#ff0000",
+        color: "#ffffff",
+        fillColor: "#005eff",
         fillOpacity: 1,
-        radius: 2
+        weight: 2,
+        radius: 4
     }).addTo(map)
         .bindPopup("Current position");
 
