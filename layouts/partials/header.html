@@ -5,9 +5,12 @@
 <section class="header navigation">
 {{ end }}
     {{ if .Site.Params.preview }}
+    {{ $data := index .Site.Data .Site.Language.Lang }}
+    {{ with $data.register }}
     <div class="ribbon left red">
-        <a>Preview</a>
+        <a>{{ .status }}</a>
     </div>
+    {{ end }}
     {{ end }}
     <div class="container">
         <div class="row">

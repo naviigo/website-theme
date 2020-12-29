@@ -1,11 +1,11 @@
 {{ "<!-- Start Register Mailinglist -->" | safeHTML }}
 {{ $data := index .Site.Data .Site.Language.Lang }}
 {{ with $data.register }}
-<section style="background-color: rgba(0, 0, 0, 0.7); z-index: 1; margin-top: -95px" class="contact-us" id="contact">
+<section class="p-2 register" id="contact">
     <div class="container">
         <div class="row">
             <div class="col">
-                <div class="color-gray text-center">
+                <div class="text-center">
                     {{ with .title }}
                     <h3>{{.}}</h3>
                     {{ end }}

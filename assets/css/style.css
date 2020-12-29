@@ -20,6 +20,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: "Questrial-Regular", sans-serif;
     font-weight: 600;
 }
+
 h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
     font-family: "Questrial-Regular", sans-serif;
     font-weight: 600;
@@ -91,6 +92,7 @@ a:focus, a:hover {
     letter-spacing: 1px;
     text-transform: uppercase;
 }
+
 .contact-form .btn-transparent {
     padding: 10px 40px;
 }
@@ -403,18 +405,21 @@ a:focus, a:hover {
 .shadow {
     box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.34);
 }
+
 @media (min-width: 768px) {
     .h300 {
         height: 300px;
         object-fit: cover;
     }
 }
+
 @media (max-width: 768px) {
     .h300 {
         max-height: 300px;
         object-fit: cover;
     }
 }
+
 .h150 {
     height: 150px;
 }
@@ -422,6 +427,7 @@ a:focus, a:hover {
 .h50 {
     height: 50px;
 }
+
 .w300 {
     width: 300px;
 }
@@ -652,6 +658,7 @@ a:focus, a:hover {
     background-image: url("../images/home-banner-bg-low.jpg");
     background-repeat: no-repeat;
 }
+
 .hero-badge {
     position: relative;
     display: -webkit-box;
@@ -669,6 +676,7 @@ a:focus, a:hover {
     color: #000000;
     padding-left: 30px;
 }
+
 .hero-area .block h2 {
     font-size: 48px;
     margin-bottom: 20px;
@@ -678,16 +686,20 @@ a:focus, a:hover {
     .hero-badge {
         padding-top: 0rem;
     }
+
     .hero-area {
         padding: 0 0;
     }
+
     .hero-area .block {
         padding: 0;
     }
+
     .hero-area .block h2 {
         margin-bottom: 0;
         margin-top: 1rem;
     }
+
     .navbar-brand-center {
         height: auto;
         margin: 0 auto;
@@ -926,6 +938,21 @@ a:focus, a:hover {
     color: #fff;
     border-radius: 0;
     cursor: pointer;
+}
+
+.register-form {
+    width: 100%;
+}
+
+.register {
+    background-color: var(--color-select);
+    border: 2px;
+    border-style: solid;
+    border-color: #000000;
+    opacity: 0.95;
+    border-radius: 10px;
+    z-index: 1;
+    margin-top: -100px
 }
 
 .contact-form {
