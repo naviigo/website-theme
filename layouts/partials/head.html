@@ -40,6 +40,9 @@
 {{ $styles := resources.Get "css/style.css"}}
 <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
 
+{{ $styles := resources.Get "css/ribbon.css" | minify}}
+<link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
+
 {{ $styles := resources.Get "css/leaflet.css" | minify}}
 <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
 

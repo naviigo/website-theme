@@ -4,12 +4,17 @@
 {{ else }}
 <section class="header navigation">
 {{ end }}
+    {{ if .Site.Params.preview }}
+    <div class="ribbon left red">
+        <a>Preview</a>
+    </div>
+    {{ end }}
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <nav class="navbar navbar-expand-md">
-                    <a class="navbar-brand" href="{{ .Site.BaseURL }}">
-                        <img src="{{ .Site.Params.logo | absURL }}" width="180px" alt="{{ .Site.Title }}">
+                    <a class="navbar-brand {{ if .Site.Params.preview }}navbar-brand-center{{end}}" href="{{ .Site.BaseURL }}"style="z-index: 2">
+                        <img src="{{ .Site.Params.logo | absURL }}" width="180px" alt="{{ .Site.Title }}" >
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
                         aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
