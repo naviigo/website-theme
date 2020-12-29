@@ -1,85 +1,46 @@
-const source = new ol.source.Vector({
-    url: '/data.json',
-    format: new ol.format.GeoJSON(),
-});
+var map = L.map('map').setView([46.003386272217334,8.951754513129218], 8);
 
-const style = new ol.style.Style({
-    fill: new ol.style.Fill({
-        color: 'rgba(7, 89, 255, 0.6)',
-    }),
-    stroke: new ol.style.Stroke({
-        color: '#0759ff',
-        width: 1,
-    }),
-    image: new ol.style.Circle({
-        radius: 5,
-        fill: new ol.style.Fill({
-            color: 'rgba(255, 255, 255, 0.6)',
-        }),
-        stroke: new ol.style.Stroke({
-            color: '#319FD3',
-            width: 1,
-        }),
-    }),
-});
-const vectorLayer = new ol.layer.Vector({
-    source: source,
-    style: style,
-});
-const view = new ol.View({
-    center: ol.proj.fromLonLat([8.951754513129218, 46.003386272217334]),
-    zoom: 10,
-});
+/*L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);*/
+L.tileLayer('https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png', {
+    maxZoom: 20,
+    attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+}).addTo(map);
+/*L.tileLayer('https://tiles.openseamap.org/seamark/{z}/{x}/{y}.png', {
+    attribution: 'Map data: &copy; <a href="http://www.openseamap.org">OpenSeaMap</a> contributors'
+}).addTo(map);*/
 
-const map = new ol.Map({
-    layers: [
-        new ol.layer.Tile({
-            source: new ol.source.OSM(),
-        }), vectorLayer],
-    target: 'map',
-    view: view,
-});
+var geojsonLayer = new L.GeoJSON.AJAX("/data.json");
+geojsonLayer.addTo(map);
+// placeholders for the L.marker and L.circle representing user's current position and accuracy
+var current_position, current_accuracy;
 
-const geolocation = new ol.Geolocation({
-    // enableHighAccuracy must be set to true to have the heading value.
-    trackingOptions: {
-        enableHighAccuracy: true,
-    },
-    projection: view.getProjection(),
-});
+function onLocationFound(e) {
+    // if position defined, then remove the existing position marker and accuracy circle from the map
+    if (current_position) {
+        map.removeLayer(current_position);
+        map.removeLayer(current_accuracy);
+    }
 
-geolocation.setTracking(true);
+    //var radius = e.accuracy / 2;
 
+    current_position = L.circleMarker(e.latlng,{
+        color: "#ff0000",
+        fillOpacity: 1,
+        radius: 2
+    }).addTo(map)
+        .bindPopup("Current position");
 
-const accuracyFeature = new ol.Feature();
-geolocation.on('change:accuracyGeometry', function () {
-    accuracyFeature.setGeometry(geolocation.getAccuracyGeometry());
-});
+    //current_accuracy = L.circle(e.latlng, radius).addTo(map);
+}
 
-const positionFeature = new ol.Feature();
-positionFeature.setStyle(
-    new ol.style.Style({
-        image: new ol.style.Circle({
-            radius: 6,
-            fill: new ol.style.Fill({
-                color: '#3399CC',
-            }),
-            stroke: new ol.style.Stroke({
-                color: '#fff',
-                width: 2,
-            }),
-        }),
-    })
-);
+function onLocationError(e) {
+    alert(e.message);
+}
 
-geolocation.on('change:position', function () {
-    const coordinates = geolocation.getPosition();
-    positionFeature.setGeometry(coordinates ? new ol.geom.Point(coordinates) : null);
-});
+map.on('locationfound', onLocationFound);
+map.on('locationerror', onLocationError);
 
-new ol.layer.Vector({
-    map: map,
-    source: new ol.source.Vector({
-        features: [accuracyFeature, positionFeature],
-    }),
-});
+map.locate({setView: true, maxZoom: 10});
+

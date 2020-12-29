@@ -32,15 +32,17 @@
 <link rel="stylesheet" href="{{ `plugins/slick-carousel/slick/slick-theme.css` | absURL }}">
 {{ "<!-- Main Stylesheet -->" | safeHTML }}
 
-{{ $map := resources.Get "js/ol.js"}}
-<script type="module" src="{{ $map.Permalink }}"></script>
+{{ $map := resources.Get "js/leaflet.js"}}
+<script src="{{ $map.Permalink }}"></script>
+{{ $map := resources.Get "js/leaflet.ajax.js"}}
+<script src="{{ $map.Permalink }}"></script>
 
 {{ $styles := resources.Get "css/style.css" | minify}}
 <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
 
-{{ $styles := resources.Get "css/map.css" | minify}}
+{{ $styles := resources.Get "css/leaflet.css" | minify}}
 <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
 
-{{ $map := resources.Get "js/map.js" | minify}}
+{{ $map := resources.Get "js/map.js"}}
 <script type="module" src="{{ $map.Permalink }}"></script>
 </head>
