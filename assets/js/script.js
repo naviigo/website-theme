@@ -256,6 +256,13 @@ $(window).on("load", function () {
 		}
 	});
 
+	$('#hideiOS').click(function (e) {
+		$('#register').show();
+	});
+	$('#hideAndroid').click(function (e) {
+		$('#register').show();
+	});
+
 
 })(jQuery);
 

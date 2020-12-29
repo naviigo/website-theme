@@ -36,13 +36,13 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-6">
-                                    <a href="{{ with $.Site.Params.feature.hero.badgeiOS }}{{ . | absURL }}{{ end }}" target="_blank" >
+                                        <a {{ if $.Site.Params.preview }}id="hideiOS"{{ end }}href="{{ if $.Site.Params.preview }}#{{ else }}{{ $.Site.Params.feature.hero.badgeiOS | absURL }}{{ end }}" {{ if not ($.Site.Params.preview)  }}target="_blank"{{ end }} >
                                         <img class="w-100" src="/images/app-store-soon.png" alt="App Store"/>
                                     </a>
                                     </div>
                                     <div class="col-6">
-                                    <a href="{{ with $.Site.Params.feature.hero.badgeiOS }}{{ . | absURL }}{{ end }}" target="_blank" >
-                                        <img class="w-100" src="/images/google-play.png" alt="Google Play"/>
+                                        <a {{ if $.Site.Params.preview }}id="hideAndroid"{{ end }}href="{{ if $.Site.Params.preview }}#{{ else }}{{ $.Site.Params.feature.hero.Android | absURL }}{{ end }}" {{ if not ($.Site.Params.preview)  }}target="_blank"{{ end }} >
+                                        <img class="w-100" src="/images/google-play-soon.webp" alt="Google Play"/>
                                     </a>
                                     </div>
                                 </div>
@@ -52,7 +52,9 @@
 
                 </div>
                 {{ if $.Site.Params.preview }}
-                {{ partial "register.html" $ }}
+                <div id="register" style="display: none">
+                    {{ partial "register.html" $ }}
+                </div>
                 {{ end }}
             </div>
         </div>
