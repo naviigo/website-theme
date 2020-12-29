@@ -199,6 +199,62 @@ $(window).on("load", function () {
 			})
 		}
 	});
+	$('#register-submit').click(function (e) {
+
+		//stop the form from being submitted
+		e.preventDefault();
+
+		/* declare the variables, var error is the variable that we use on the end
+        to determine if there was an error or not */
+		var error = false;
+		var email = $('#email').val();
+
+		/* in the next section we do the checking by using VARIABLE.length
+        where VARIABLE is the variable we are checking (like name, email),
+        length is a JavaScript function to get the number of characters.
+        And as you can see if the num of characters is 0 we set the error
+        variable to true and show the name_error div with the fadeIn effect.
+        if it's not 0 then we fadeOut the div( that's if the div is shown and
+        the error is fixed it fadesOut.
+
+        The only difference from these checks is the email checking, we have
+        email.indexOf('@') which checks if there is @ in the email input field.
+        This JavaScript function will return -1 if no occurrence have been found.*/
+		if (email.length == 0 || email.indexOf('@') == '-1') {
+			var error = true;
+			$('#email').css("border-color", "#D8000C");
+		} else {
+			$('#email').css("border-color", "#666");
+		}
+
+		//now when the validation is done we check if the error variable is false (no errors)
+		if (error == false) {
+			//disable the submit button to avoid spamming
+			//and change the button text to Sending...
+			$('#contact-submit').attr({
+				'disabled': 'false',
+				'value': 'Sending...'
+			});
+
+			let posting = $.post({
+				url: "https://docs.google.com/forms/d/e/1FAIpQLSfffIRVPy433QSfmOGf74VBrQ5BSGTNoLA2EnNxhMoYpidg_g/" +
+					"formResponse?entry.1453226885=" + name + "&" +
+					"entry.1086317574=" + email + "&" +
+					"entry.993158506=" + subject + "&" +
+					"entry.1573115456=" + message,
+				data: null,
+				dataType: 'jsonp',
+				crossDomain: true
+			});
+
+			posting.always(function (data) {
+				//if the mail is sent remove the submit paragraph
+				$('#cf-submit').remove();
+				//and show the mail success div with fadeIn
+				$('#mail-success').fadeIn(500);
+			})
+		}
+	});
 
 
 })(jQuery);

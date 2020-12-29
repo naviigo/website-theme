@@ -32,14 +32,31 @@
                         </ul>
                     {{ end }}
                     {{ if $.Site.Params.feature.hero.badges }}
-                        <div class="mt-50 hero-badge">
-                            <a href="{{ with $.Site.Params.feature.hero.badgeiOS }}{{ . | absURL }}{{ end }}" target="_blank" ><img style="height: 3rem;" src="/images/app-store-soon.png"/></a>
-                            <a class="ml-3" href="{{ with $.Site.Params.hero.feature.badgeAndroid }}{{ . | absURL }}{{ end }}" target="_blank" ><img style="height: 3rem;" src="/images/google-play.png"/></a>
+                        <div class="hero-badge mt-5">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-6">
+                                    <a href="{{ with $.Site.Params.feature.hero.badgeiOS }}{{ . | absURL }}{{ end }}" target="_blank" >
+                                        <img class="w-100" src="/images/app-store-soon.png" alt="App Store"/>
+                                    </a>
+                                    </div>
+                                    <div class="col-6">
+                                    <a href="{{ with $.Site.Params.feature.hero.badgeiOS }}{{ . | absURL }}{{ end }}" target="_blank" >
+                                        <img class="w-100" src="/images/google-play.png" alt="Google Play"/>
+                                    </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     {{ end }}
+
                 </div>
+                {{ if $.Site.Params.preview }}
+                {{ partial "register.html" $ }}
+                {{ end }}
             </div>
         </div>
+
     </div>
 </section>
 {{ end }}
