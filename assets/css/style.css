@@ -1527,6 +1527,8 @@ a:focus, a:hover {
 .team-member .member-photo {
     overflow: hidden;
     position: relative;
+    margin: 0 auto;
+    width: 60%;
     clip-path: circle(50% at 50% 50%);
 }
 
