@@ -405,7 +405,12 @@ a:focus, a:hover {
 .shadow {
     box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.34);
 }
-
+.app-badge{
+    max-width: 150px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
 @media (min-width: 768px) {
     .h300 {
         height: 300px;
@@ -443,6 +448,7 @@ a:focus, a:hover {
 .w50 {
     width: 50px;
 }
+
 
 .marginBottom {
     margin-bottom: 2rem;
