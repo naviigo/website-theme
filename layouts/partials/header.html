@@ -1,8 +1,8 @@
 {{ "<!-- Fixed Navigation -->" | safeHTML }}
 {{ if .Site.Params.menufixed }}
-<section class="header navigation top-bar">
+<section id="header" class="header navigation top-bar">
 {{ else }}
-<section class="header navigation">
+<section id="header" class="header navigation">
 {{ end }}
     {{ if .Site.Params.preview }}
     {{ $data := index .Site.Data .Site.Language.Lang }}

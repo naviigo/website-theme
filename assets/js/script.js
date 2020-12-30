@@ -263,6 +263,13 @@ $(window).on("load", function () {
 		$('#register').show();
 	});
 
+	$(window).scroll(function () {
+		if ($(this).scrollTop() > 50) {
+			$('#header').addClass('header-scrolled');
+		} else {
+			$('#header').removeClass('header-scrolled');
+		}
+	});
 
 })(jQuery);
 
