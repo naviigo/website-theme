@@ -1389,7 +1389,7 @@ a:focus, a:hover {
 }
 
 .service-2 .service-item .count {
-    font-size: 80px;
+    font-size: 50px;
     position: absolute;
     top: 0;
     left: 20px;
@@ -1398,15 +1398,15 @@ a:focus, a:hover {
 }
 
 .service-2 .service-item i {
-    font-size: 50px;
+    font-size: 30px;
     display: inline-block;
     border-radius: 90px;
     box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.1);
     color: #fff;
-    height: 100px;
-    line-height: 95px;
+    height: 70px;
+    line-height: 70px;
     margin-bottom: 20px;
-    width: 100px;
+    width: 70px;
     transition: all 0.3s ease 0s;
 }
 
