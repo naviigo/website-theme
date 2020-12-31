@@ -1382,14 +1382,14 @@ a:focus, a:hover {
     height: 100%;
     background: #fff;
     border: 1px solid #eee;
-    padding: 50px 20px;
+    padding: 50px 20px 10px 20px;
     margin-right: -1px;
     margin-bottom: -1px;
     transition: all 0.3s ease 0s;
 }
 
 .service-2 .service-item .count {
-    font-size: 50px;
+    font-size: 40px;
     position: absolute;
     top: 0;
     left: 20px;
