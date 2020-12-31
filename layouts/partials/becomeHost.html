@@ -2,19 +2,24 @@
 {{ $data := index .Site.Data .Site.Language.Lang }}
 {{ with $data.becomeHost }}
     {{ "<!-- BecomeHost Section Start -->" | safeHTML }}
-    <section class="about-2 section bg-gray" id="about">
+    <section class="section" id="becomeHost">
         <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-5">
+                <div class="title">
                     {{ with .title }}
                     <h2>{{ . }}</h2>
                     {{ end }}
-                </div>
-                <div class="col-12 col-md-7">
+                <div class="text-center">
                     {{ with .description }}
                     <p>{{ . | markdownify }}</p>
                     {{ end }}
                 </div>
+                {{ if .btnText }}
+                <ul class="list-inline text-center mt-5">
+                    <li class="list-inline-item">
+                        <a href="{{ with .btnURL }}{{.}}{{ end }}" class="btn btn-main">{{ .btnText }}</a>
+                    </li>
+                </ul>
+                {{ end }}
             </div>
         </div>
     </section>
