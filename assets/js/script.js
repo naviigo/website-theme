@@ -1,13 +1,16 @@
 /* ========================================================================= */
 /*	Page Preloader
 /* ========================================================================= */
-
-$(window).on("load", function () {
-	$('#preloader').fadeOut('slow', function () {
-		$(this).remove();
+if(window.location.pathname.match("^$|^\\/$|^\\/\\S{2}\\/$")) {
+	$(window).on("load", function () {
+		$('#preloader').fadeOut('slow', function () {
+			$(this).remove();
+		});
 	});
-});
-
+}
+else{
+	$('#preloader').hide();
+}
 (function ($) {
 	"use strict";
 
