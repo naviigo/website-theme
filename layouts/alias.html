@@ -45,19 +45,25 @@
                 return 'en'
             }
 
-            var preferLang = getFirstBrowserLanguage()
-            if (preferLang.indexOf('it') !== -1) {
-                // visitor prefers Italian
-                window.location.replace('/it/')
-            } else if (preferLang.indexOf('de') !== -1) {
-                // visitor prefers Italian
-                window.location.replace('/de/')
-            } else if (preferLang.indexOf('fr') !== -1) {
-                // visitor prefers Italian
-                window.location.replace('/fr/')
-            } else {
-                // fallback to English
-                window.location.replace('/en/')
+            const referrer = new URL(document.referrer);
+            if(referrer.hostname === window.location.hostname) {
+                window.location.replace(referrer.pathname.match("^(\\/[^\\/?]+)")[1])
+            }
+            else {
+                var preferLang = getFirstBrowserLanguage()
+                if (preferLang.indexOf('it') !== -1) {
+                    // visitor prefers Italian
+                    window.location.replace('/it/')
+                } else if (preferLang.indexOf('de') !== -1) {
+                    // visitor prefers Italian
+                    window.location.replace('/de/')
+                } else if (preferLang.indexOf('fr') !== -1) {
+                    // visitor prefers Italian
+                    window.location.replace('/fr/')
+                } else {
+                    // fallback to English
+                    window.location.replace('/en/')
+                }
             }
         })()
     </script>
