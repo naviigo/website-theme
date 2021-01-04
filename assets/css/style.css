@@ -1159,6 +1159,7 @@ a:focus, a:hover {
     padding-bottom: 40px;
     text-align: center;
     background: #f9f9f9;
+    height: 100%;
 }
 
 .pricing-table .pricing-item a.btn-main, .pricing-table .pricing-item a.btn-main-sm {
@@ -1181,11 +1182,22 @@ a:focus, a:hover {
 }
 
 .pricing-table .price-title {
+    height: 18rem;
     padding: 30px 0 20px;
     text-align: center;
     border-top-right-radius: 3px;
     border-top-left-radius: 3px;
     color: #fff;
+}
+.pricing-table .bottom {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+}
+
+.pricing-table .bottom a {
+    position: relative;
+    left: -50%;
 }
 
 .pricing-table .price-title > h3 {
