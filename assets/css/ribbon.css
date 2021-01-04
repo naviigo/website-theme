@@ -5,8 +5,8 @@ body{
 
 .ribbon{
     position: absolute;
-    top: 42px;
-    width: 200px;
+    top: 24px;
+    width: 130px;
     padding: 1px 0;
     background: #000;
     color: #eee;
@@ -17,7 +17,7 @@ body{
 }
 
 .ribbon.left{
-    left: -42px;
+    left: -28px;
     -moz-transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);
@@ -26,7 +26,7 @@ body{
 }
 
 .ribbon.right{
-    right: -42px;
+    right: -28px;
     -moz-transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
     -o-transform: rotate(45deg);
@@ -41,13 +41,13 @@ body{
     display: block;
     padding: 1px 0;
     height: 24px;
-    line-height: 24px;
+    line-height: 21px;
 
     color: inherit;
     text-align: center;
     text-decoration: none;
     font-family: "Questrial-Regular", sans-serif;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600;
 
     border: 1px solid rgba(255,255,255,0.3);
@@ -55,6 +55,7 @@ body{
     -moz-text-shadow: 0 0 10px rgba(0,0,0,0.31);
     -webkit-text-shadow: 0 0 10px rgba(0,0,0,0.31);
     text-shadow: 0 0 10px rgba(0,0,0,0.31);
+    text-transform: capitalize;
 }
 
 .ribbon.black{
