@@ -562,10 +562,7 @@ a:focus, a:hover {
 
 .header-scrolled {
     opacity: 0.95;
-    background-color: var(--color-select);
-    background-image: none !important;
     transition: all 0.5s;
-    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
 }
 
 .navigation .navbar-nav > li.active a {
