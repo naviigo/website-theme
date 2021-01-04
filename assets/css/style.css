@@ -1602,6 +1602,17 @@ a:focus, a:hover {
     height: 100%;
 }
 
+.team-member .social {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+}
+
+.team-member .social ul {
+    position: relative;
+    left: -50%;
+}
+
 /*=================================================================
   Testimonial section
 ==================================================================*/
