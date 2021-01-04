@@ -1,0 +1,17 @@
+{{ define "main" }}
+
+<section class="blog-single section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                {{ with .Params.image }}
+                <img src="{{ . | absURL }}" class="w-100 mb-3" alt="Post-Image">
+                {{ end }}
+                <h2>{{ .Title }}</h2>
+                <span class="mb-10">{{ .Description }}</span>
+                <iframe src="{{ .Params.link }}" width="100%" height="1300" class="mt-20" frameborder="0" marginheight="0" marginwidth="0">{{i18n "loading" }}…</iframe>
+        </div>
+    </div>
+</section>
+
+{{ end }}
