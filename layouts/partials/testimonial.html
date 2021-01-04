@@ -1,6 +1,6 @@
+{{ if .Site.Params.feature.testimonial.enable }}
 {{ $data := index .Site.Data .Site.Language.Lang }}
 {{ with $data.testimonial }}
-    {{ if .enable }}
     <section class="testimonial section" id="testimonial">
         <div class="container">
             <div class="row">
