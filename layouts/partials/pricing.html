@@ -28,7 +28,7 @@
                             {{ with .description }}<p>{{.}}</p>{{ end }}
                         </div>
                         {{ "<!-- plan description -->" | safeHTML }}
-                        <ul>
+                        <ul class="pricing-features">
                             {{ range .featurelist }}
                             <li>{{.item}}</li>
                             {{ end }}

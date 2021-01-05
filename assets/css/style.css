@@ -516,11 +516,6 @@ a:focus, a:hover {
     padding-top: 30px;
 }
 
-.bg-pricing {
-    background: url("../images/pricing-bg.jpg");
-    background-size: cover;
-}
-
 .page-title {
     color: var(--color-navbar)
 }
@@ -1168,7 +1163,7 @@ a:focus, a:hover {
 }
 
 .pricing-table .pricing-item ul {
-    padding: 20px 0 10px;
+    padding: 20px 20px 10px;
 }
 
 .pricing-table .pricing-item li {
@@ -1179,6 +1174,11 @@ a:focus, a:hover {
 
 .pricing-table .pricing-item li i {
     margin-right: 6px;
+}
+
+.bg-pricing {
+    background: url("../images/pricing-bg.jpg");
+    background-size: cover;
 }
 
 .pricing-table .price-title {
@@ -1222,7 +1222,10 @@ a:focus, a:hover {
     font-size: 50px;
     padding: 10px 0;
 }
-
+.pricing-features{
+    list-style: disclosure-closed inside none;
+    text-align: left;
+}
 /*=================================================================
   Portfolio section
 ==================================================================*/
