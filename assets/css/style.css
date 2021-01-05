@@ -1550,7 +1550,7 @@ a:focus, a:hover {
 }
 
 .team-member .member-content {
-    padding: 25px 0;
+    padding: 25px 0 0 0;
 }
 
 .team-member .member-content h3 {
@@ -1614,7 +1614,7 @@ a:focus, a:hover {
 }
 
 .team-member .social {
-    position: absolute;
+    position: relative;
     bottom: 0;
     left: 50%;
 }
@@ -1622,6 +1622,7 @@ a:focus, a:hover {
 .team-member .social ul {
     position: relative;
     left: -50%;
+    font-size: 2rem;
 }
 
 /*=================================================================
