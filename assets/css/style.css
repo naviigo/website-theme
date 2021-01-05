@@ -7,6 +7,7 @@
     --color-hover: #1294e590;
     --color-navbar: #4c4c4c;
     --color-grey: #777;
+    --image-overlay: linear-gradient(rgba(18, 148, 229,0.7),rgba(18, 148, 229,0.7));
 }
 
 body {
@@ -1169,7 +1170,7 @@ a:focus, a:hover {
 }
 
 .bg-pricing {
-    background: url("/images/pricing-bg.jpg");
+    background: var(--image-overlay), url("/images/about/about-2.png");
     background-size: cover;
 }
 

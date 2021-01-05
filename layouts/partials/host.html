@@ -2,10 +2,10 @@
 {{ "<!-- Start Host Section -->" | safeHTML }}
 {{ $data := index .Site.Data .Site.Language.Lang }}
 {{ with $data.host }}
-<section class="about-2 section bg-gray" id="host">
+<section class="section bg-gray" id="host">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-5">
+            <div class="title col-12 col-md-5">
                 {{ with .title }}
                 <h2>{{ . }}</h2>
                 {{ end }}
