@@ -19,7 +19,7 @@
             <div class="row justify-content-center">
                 {{ range .item }}
                 {{ "<!-- single pricing table -->" | safeHTML }}
-                <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="col-md-4 col-sm-6 col-xs-12 mb-0 mb-sm-4">
                     <div class="pricing-item">
                         {{ "<!-- plan name & value -->" | safeHTML }}
                         <div class="price-title bg-pricing">
@@ -34,7 +34,7 @@
                             {{ end }}
                         </ul>
                         {{ "<!-- signup button -->" | safeHTML }}
-                        <div class="bottom mb-5">
+                        <div class="bottom mb-3">
                             <a class="btn btn-main" href="{{.btnURL}}">{{.btnText}}</a>
                         </div>
                     </div>
