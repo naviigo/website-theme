@@ -1,15 +1,17 @@
 {{ if .Site.Params.feature.host.enable }}
 {{ "<!-- Start Host Section -->" | safeHTML }}
+{{ $data := index .Site.Data .Site.Language.Lang }}
+{{ with $data.host }}
 <section class="about-2 section bg-gray" id="host">
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-5">
-                {{ with .Site.Params.host.title }}
+                {{ with .title }}
                 <h2>{{ . }}</h2>
                 {{ end }}
             </div>
             <div class="col-12 col-md-7">
-                {{ with .Site.Params.host.description }}
+                {{ with .description }}
                 <p>{{ . | markdownify }}</p>
                 {{ end }}
             </div>
@@ -17,4 +19,5 @@
     </div>
 </section>
 {{ "<!-- End Host section -->" | safeHTML }}
+{{ end }}
 {{ end }}
