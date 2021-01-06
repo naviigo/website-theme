@@ -1,8 +1,8 @@
 <head>
-
+{{ $data := index .Site.Data .Site.Language.Lang }}
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
-<meta name="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+<meta name="description" content="{{ with $data.hero.heading }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+<meta name="og:description" content="{{ with $data.hero.heading }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
 <meta name="image" content="{{ `images/logo-loading.png` | absURL }}">
 <meta name="og:image" content="{{ `images/logo-loading.png` | absURL }}">
 {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
