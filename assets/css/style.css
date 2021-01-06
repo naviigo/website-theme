@@ -1537,6 +1537,7 @@ a:focus, a:hover {
 .team-member {
     background: #fff;
     margin-bottom: 15px;
+    height: 100%;
 }
 
 .zoom:hover {
@@ -1614,7 +1615,7 @@ a:focus, a:hover {
 }
 
 .team-member .social {
-    position: relative;
+    position: absolute;
     bottom: 0;
     left: 50%;
 }

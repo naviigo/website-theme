@@ -21,7 +21,7 @@
                 {{ $enableDesignation := .Site.Params.feature.team.enableDesignation }}
                 {{ range $data.team.member }}
                     {{ "<!-- team member -->" | safeHTML }}
-                    <div class="col-12 col-md-3 col-sm-6">
+                    <div class="col-12 col-md-3 col-sm-6 mb-2">
                         <div class="team-member text-center">
                             <div class="member-photo zoom">
                                 <img class="img-fluid" src="{{.image | absURL }}" alt="team people">
@@ -34,6 +34,7 @@
                                 {{ end }}
                                 <p>{{ .description }}</p>
                             </div>
+                            <div style="height: 30px"></div>
                             <div class="social mb-3">
                                 <ul class="list-inline">
                                     {{ with .facebookURL }}
