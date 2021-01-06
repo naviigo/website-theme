@@ -52,12 +52,11 @@
                     </div>
                 </div>
                 <div class="col-sm-3 col-md-3 col-lg-3">
-                {{ with .Site.Params.footerServiceEnable }}
-                    <h3>{{ .Site.Params.footerServiceTitle }}</h3>
+                {{ if .Site.Params.footerServiceEnable }}
                     <ul>
-                        {{ range .Site.Menus.service }}
-                        <li>
-                            <a href="{{ .URL | absLangURL }}">{{ i18n .Name }}</a>
+                        {{ range .Site.Params.footer.badges.items }}
+                        <li class="mb-3">
+                            <img width="150px" src="{{ .image | absURL }}"/>
                         </li>
                         {{ end }}
                     </ul>

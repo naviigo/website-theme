@@ -1,20 +1,27 @@
 {{ if .Site.Params.feature.aboutSm.enable }}
+
+{{ $data := index .Site.Data .Site.Language.Lang }}
+{{ with $data.aboutSm }}
+
 {{ "<!-- Start About Section -->" | safeHTML }}
 <section class="about-2 section bg-gray" id="about">
     <div class="container">
-        <div class="row">
+        {{ range .item }}
+        <div class="row mb-5">
             <div class="col-12 col-md-5">
-                {{ with .Site.Params.aboutSm.title }}
+                {{ with .title }}
                     <h2>{{ . }}</h2>
                 {{ end }}
             </div>
             <div class="col-12 col-md-7">
-                {{ with .Site.Params.aboutSm.description }}
+                {{ with .description }}
                     <p>{{ . | markdownify }}</p>
                 {{ end }}
             </div>
         </div>
+        {{ end }}
     </div>
 </section>
 {{ "<!-- End About section -->" | safeHTML }}
+{{ end }}
 {{ end }}
