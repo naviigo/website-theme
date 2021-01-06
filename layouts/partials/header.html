@@ -7,7 +7,7 @@
     {{ if .Site.Params.preview }}
     {{ $data := index .Site.Data .Site.Language.Lang }}
     {{ with $data.register }}
-    <div class="ribbon left red">
+    <div class="ribbon left blue">
         <a>{{ .status }}</a>
     </div>
     {{ end }}
