@@ -32,7 +32,7 @@
                                 <div class="row">
                                     <div class="col-md-6 align-self-center">
                                         {{ with .heading }}<h2>{{ . }}</h2>{{ end }}
-                                        {{ with .content }}<p>{{ . | safeHTML }}</p>{{ end }}
+                                        {{ with .content }}<p>{{ . | markdownify }}</p>{{ end }}
                                     </div>
                                     <div class="col-md-6">
                                         <img class="img-fluid rounded shadow" src="{{ .image | absURL }}" alt="tab-image">
