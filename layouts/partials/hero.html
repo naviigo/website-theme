@@ -33,7 +33,7 @@
                     {{ end }}
                     {{ if $.Site.Params.feature.hero.badges }}
                         <div class="hero-badge mt-5">
-                            <div class="container">
+                            <div class="container" style="max-width: 350px">
                                 <div class="row">
                                     <div class="col-6">
                                         <a {{ if $.Site.Params.preview }}id="hideiOS"{{ end }}href="{{ if $.Site.Params.preview }}#{{ else }}{{ $.Site.Params.feature.hero.badgeiOS | absURL }}{{ end }}" {{ if not ($.Site.Params.preview)  }}target="_blank"{{ end }} >
