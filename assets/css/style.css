@@ -7,7 +7,7 @@
     --color-hover: #1294e590;
     --color-navbar: #4c4c4c;
     --color-grey: #777;
-    --image-overlay: linear-gradient(rgba(18, 148, 229,0.7),rgba(18, 148, 229,0.7));
+    --image-overlay: linear-gradient(rgba(18, 148, 229, 0.7), rgba(18, 148, 229, 0.7));
 }
 
 body {
@@ -486,6 +486,7 @@ a:focus, a:hover {
 
 .nav-item {
     white-space: nowrap;
+    margin-left: 0px;
 }
 
 .commonTab .nav-tabs .nav-item {
@@ -574,13 +575,19 @@ a:focus, a:hover {
     transition: .2s ease-in-out 0s;
 }
 
+@media (max-width: 991px) {
+    .navigation .navbar-nav > li > a {
+        padding: 20px 5px !important;
+    }
+}
+
 @media (max-width: 480px) {
     .navigation .navbar-nav > li > a {
         padding: 8px 0 !important;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .navigation .navbar-nav > li > a {
         padding: 8px 0 !important;
     }
@@ -811,7 +818,7 @@ a:focus, a:hover {
     margin-top: 0;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
     .about h2 {
         font-size: 25px;
     }
@@ -849,7 +856,7 @@ a:focus, a:hover {
     color: unset;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
     .about .content {
         padding: 5px 0;
     }
