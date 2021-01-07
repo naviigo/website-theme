@@ -669,7 +669,7 @@ a:focus, a:hover {
     align-items: center;
     background-image: url("/images/banner.svg");
     background-position: 0 -92px;
-    /*background-size: cover;*/
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
