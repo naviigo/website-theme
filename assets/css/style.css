@@ -598,7 +598,15 @@ a:focus, a:hover {
     background: none;
     color: var(--color-select);
 }
-
+.no-background {
+    background-image: unset!important;
+}
+.show {
+    background-size: unset;
+}
+.navigation .show, .collapsing{
+    margin-top:20px
+}
 .navigation .navbar-toggler {
     color: #000000;
     font-size: 30px;

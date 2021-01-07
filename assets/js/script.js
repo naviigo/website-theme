@@ -273,7 +273,23 @@ else{
 			$('#header').removeClass('header-scrolled');
 		}
 	});
+	document.getElementById('navigation').addEventListener('DOMAttrModified', function(e)
+	{
+		console.log(e);
+		if (e.attrName === 'class') {
+			if (e.newValue.includes('show') || e.newValue.includes('collapsing')) {
+				console.log("Setting background to null",$('#content')[0])
+				$('#content')[0].classList.add("no-background");
+				$('#header')[0].classList.add("show");
+			}
+			else {
+				console.log("Setting background to initial",$('#content'))
+				$('#content')[0].classList.remove("no-background");
+				$('#header')[0].classList.remove("show");
 
+			}
+		}
+	}, false);
 })(jQuery);
 
 
