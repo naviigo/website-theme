@@ -544,9 +544,10 @@ a:focus, a:hover {
 
 .navigation {
     transition: .3s all;
-    background-image: url("../images/home-banner-bg.jpg");
+    background-image: url("../images/banner.svg");
     background-repeat: no-repeat;
-    background-color: #fff;
+    background-size: cover;
+    background-color: rgba(255,255,255,1);
 }
 
 .top-bar {
@@ -666,7 +667,9 @@ a:focus, a:hover {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    background-image: url("/images/home-banner-bg-low.jpg");
+    background-image: url("/images/banner.svg");
+    background-position: 0 -92px;
+    /*background-size: cover;*/
     background-repeat: no-repeat;
 }
 
