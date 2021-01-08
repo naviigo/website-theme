@@ -22,58 +22,7 @@
             </div>
         </div>
         {{ end }}
-        <div class="row bg-white">
-            {{ with $base.Site.Params.feature.contact }}
-            {{ if .mapEnable }}
-            {{ "<!-- Contact Details --> " | safeHTML }}
-            <div class="col-12 col-md-6">
-                <div class="map">
-                    <div id="map" data-lat="{{ .mapLatitude }}" data-long="{{ .mapLongitude }}"
-                         data-marker="{{ .mapMarker | absURL }}"></div>
-                </div>
-            </div>
-            {{ else }}
-            <div class="col-12 col-md-6">
-                <img class="img-fluid rounded" style="height: 375px" src="/images/about/contact-us.svg"
-                     alt="contact-us">
-            </div>
-            {{ end }}
-            {{ end }}
-            {{ "<!-- Contact Form --> " | safeHTML }}
-            <div class="contact-form col-12 col-md-6 ">
-                <form id="contact-form" method="post" action="sendmail.php" role="form">
-                    <div class="form-group">
-                        <input type="text" placeholder='{{ i18n "name" }}' class="form-control" name="name" id="name">
-                    </div>
-
-                    <div class="form-group">
-                        <input type="email" placeholder='{{ i18n "email" }}' class="form-control" name="email"
-                               id="email">
-                    </div>
-
-                    <div class="form-group">
-                        <input type="text" placeholder='{{ i18n "subject" }}' class="form-control" name="subject"
-                               id="subject">
-                    </div>
-
-                    <div class="form-group">
-                        <textarea rows="6" placeholder='{{ i18n "message" }}' class="form-control" name="message"
-                                  id="message"></textarea>
-                    </div>
-
-                    <div id="mail-success" class="success">
-                        {{ i18n "email-success-message" }}
-                    </div>
-
-                    <div id="mail-fail" class="error">
-                        {{ i18n "email-fail-message" }}
-                    </div>
-                    <div id="cf-submit">
-                        <input type="submit" id="contact-submit" class="btn btn-main" value='{{ i18n "submit" }}'>
-                    </div>
-                </form>
-            </div>
-        </div>
+        {{ partial "contact-form.html" . }}
         {{ if .contactsDisplayEnable }}
         <div class="row">
             <div class="col-12 col-md-4">
