@@ -276,7 +276,7 @@ else{
 	document.getElementById('navbar-switcher').addEventListener('click', function(e)
 	{
 		console.log(e);
-		if ($('#content')[0].classList.contains("no-background")) {
+		if ($('#navigation')[0].classList.contains("show")) {
 			console.log("Setting background to initial",$('#content'))
 			$('#content')[0].classList.remove("no-background");
 			$('#header')[0].classList.remove("show");

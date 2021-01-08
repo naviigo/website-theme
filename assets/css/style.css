@@ -604,8 +604,8 @@ a:focus, a:hover {
 .show {
     background-size: unset;
 }
-.navigation .show, .collapsing{
-    margin-top:20px
+.collapsing{
+    transition: unset;
 }
 .navigation .navbar-toggler {
     color: #000000;
