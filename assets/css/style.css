@@ -681,8 +681,23 @@ a:focus, a:hover {
     background-image: url("/images/banner.svg");
     background-position: 0 -92px;
     background-repeat: no-repeat;
+    min-height: 560px;
 }
-
+@media (min-width: 1681px) {
+    .back-banner {
+        min-height: 900px;
+    }
+}
+@media (min-width: 2701px) {
+    .back-banner {
+        min-height: 1200px;
+    }
+}
+@media (min-width: 3601px) {
+    .back-banner {
+        min-height: 1500px;
+    }
+}
 .hero-badge {
     position: relative;
     display: -webkit-box;
