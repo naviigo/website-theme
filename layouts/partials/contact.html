@@ -6,22 +6,22 @@
 {{ "<!-- Start Contact Us -->" | safeHTML }}
 <section class="contact-us section" id="contact">
     <div class="container">
+        {{ if $.showTitle }}
         <div class="row">
             <div class="col">
                 <div class="title text-center">
-                    {{ if $.showTitle }}
 
                     {{ with .topTitle }}<h4>{{.}}</h4>{{ end }}
                     {{ with .title }}
                     <h2>{{.}}</h2>
                     <span class="border"></span>
                     {{ end }}
-                    {{ end }}
 
                     {{ with .subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
                 </div>
             </div>
         </div>
+        {{ end }}
         <div class="row bg-white">
             {{ with $base.Site.Params.feature.contact }}
             {{ if .mapEnable }}
@@ -100,35 +100,35 @@
                     <ul class="list-inline social-icon">
                         {{ with .facebook }}
                         <li class="list-inline-item">
-                            <a href="{{.}}">
+                            <a target="_blank" href="{{.}}">
                                 <i class="tf-ion-social-facebook"></i>
                             </a>
                         </li>
                         {{ end }}
                         {{ with .twitter }}
                         <li class="list-inline-item">
-                            <a href="{{.}}">
+                            <a target="_blank" href="{{.}}">
                                 <i class="tf-ion-social-twitter"></i>
                             </a>
                         </li>
                         {{ end }}
                         {{ with .linkedin }}
                         <li class="list-inline-item">
-                            <a href="{{.}}">
+                            <a target="_blank" href="{{.}}">
                                 <i class="tf-ion-social-linkedin"></i>
                             </a>
                         </li>
                         {{ end }}
                         {{ with .dribbble }}
                         <li class="list-inline-item">
-                            <a href="{{.}}">
+                            <a target="_blank" href="{{.}}">
                                 <i class="tf-ion-social-dribbble"></i>
                             </a>
                         </li>
                         {{ end }}
                         {{ with .instagram }}
                         <li class="list-inline-item">
-                            <a href="{{.}}">
+                            <a target="_blank" href="{{.}}">
                                 <i class="tf-ion-social-instagram"></i>
                             </a>
                         </li>
