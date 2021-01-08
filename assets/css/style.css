@@ -877,10 +877,6 @@ a:focus, a:hover {
 /*=================================================================
   About us 2 section
 ==================================================================*/
-.about-2 {
-    background: #F7F7F7;
-}
-
 .about-2 h2 {
     position: relative;
 }
@@ -1697,7 +1693,6 @@ a:focus, a:hover {
   Latest Posts
 ==================================================================*/
 .post-item {
-    background: #fff;
     margin-bottom: 40px;
 }
 
