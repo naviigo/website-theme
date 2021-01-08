@@ -16,6 +16,6 @@
 
     {{ partial "team.html" . }}
 
-    {{ partial "contact.html" . }}
+{{ partial "contact.html" (dict "context" . "showTitle" true) }}
 
 {{ end }}

@@ -1,35 +1,45 @@
+{{ with .context }}
 {{ if .Site.Params.feature.contact.enable }}
+{{ $base := . }}
+{{ $data := index .Site.Data .Site.Language.Lang }}
+{{ with $data.contact }}
 {{ "<!-- Start Contact Us -->" | safeHTML }}
 <section class="contact-us section" id="contact">
     <div class="container">
         <div class="row">
             <div class="col">
                 <div class="title text-center">
-                    {{ with .Site.Params.contact.topTitle }}<h4>{{.}}</h4>{{ end }}
-                    {{ with .Site.Params.contact.title }}
+                    {{ if $.showTitle }}
+
+                    {{ with .topTitle }}<h4>{{.}}</h4>{{ end }}
+                    {{ with .title }}
                     <h2>{{.}}</h2>
                     <span class="border"></span>
                     {{ end }}
-                    {{ with .Site.Params.contact.subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
+                    {{ end }}
+
+                    {{ with .subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
                 </div>
             </div>
         </div>
         <div class="row bg-white">
-            {{ with .Site.Params.contact }}
-                {{ if .mapEnable }}
-                {{ "<!-- Contact Details -->" | safeHTML }}
-                <div class="col-12 col-md-6">
-                    <div class="map">
-                        <div id="map" data-lat="{{ .mapLatitude }}" data-long="{{ .mapLongitude }}" data-marker="{{ .mapMarker | absURL }}"></div>
-                    </div>
+            {{ with $base.Site.Params.feature.contact }}
+            {{ if .mapEnable }}
+            {{ "<!-- Contact Details --> " | safeHTML }}
+            <div class="col-12 col-md-6">
+                <div class="map">
+                    <div id="map" data-lat="{{ .mapLatitude }}" data-long="{{ .mapLongitude }}"
+                         data-marker="{{ .mapMarker | absURL }}"></div>
                 </div>
-                {{ else }}
-                <div class="col-12 col-md-6">
-                    <img class="img-fluid rounded" style="height: 375px"  src="/images/about/contact-us.svg" alt="contact-us">
-                </div>
-                {{ end }}
+            </div>
+            {{ else }}
+            <div class="col-12 col-md-6">
+                <img class="img-fluid rounded" style="height: 375px" src="/images/about/contact-us.svg"
+                     alt="contact-us">
+            </div>
             {{ end }}
-            {{ "<!-- Contact Form -->" | safeHTML }}
+            {{ end }}
+            {{ "<!-- Contact Form --> " | safeHTML }}
             <div class="contact-form col-12 col-md-6 ">
                 <form id="contact-form" method="post" action="sendmail.php" role="form">
                     <div class="form-group">
@@ -37,15 +47,18 @@
                     </div>
 
                     <div class="form-group">
-                        <input type="email" placeholder='{{ i18n "email" }}' class="form-control" name="email" id="email">
+                        <input type="email" placeholder='{{ i18n "email" }}' class="form-control" name="email"
+                               id="email">
                     </div>
 
                     <div class="form-group">
-                        <input type="text" placeholder='{{ i18n "subject" }}' class="form-control" name="subject" id="subject">
+                        <input type="text" placeholder='{{ i18n "subject" }}' class="form-control" name="subject"
+                               id="subject">
                     </div>
 
                     <div class="form-group">
-                        <textarea rows="6" placeholder='{{ i18n "message" }}' class="form-control" name="message" id="message"></textarea>
+                        <textarea rows="6" placeholder='{{ i18n "message" }}' class="form-control" name="message"
+                                  id="message"></textarea>
                     </div>
 
                     <div id="mail-success" class="success">
@@ -61,13 +74,13 @@
                 </form>
             </div>
         </div>
-        {{ if .Site.Params.contact.contactsDisplayEnable }}
+        {{ if .contactsDisplayEnable }}
         <div class="row">
             <div class="col-12 col-md-4">
                 <div class="address-block contact-meta-block">
                     <i class="tf-ion-android-pin"></i>
                     <h4>{{ i18n "our-location" }}</h4>
-                    {{ with .Site.Params.contact.address }}<p>{{ . | safeHTML }}</p>{{ end }}
+                    {{ with .address }}<p>{{ . | safeHTML }}</p>{{ end }}
                 </div>
             </div>
             <div class="col-12 col-md-4">
@@ -75,8 +88,8 @@
                     <i class="tf-ion-ios-telephone"></i>
                     <h4>{{ i18n "contact-us" }}</h4>
                     <p>
-                         {{ with .Site.Params.contact.phone }}Office: {{.}} {{ end }}
-                        <br> {{ with .Site.Params.contact.fax }} Fax: {{ . }} {{ end }}
+                        {{ with .phone }}Office: {{.}} {{ end }}
+                        <br> {{ with .fax }} Fax: {{ . }} {{ end }}
                     </p>
                 </div>
             </div>
@@ -85,35 +98,35 @@
                     <i class="tf-ion-ios-contact"></i>
                     <h4>{{ i18n "social" }}</h4>
                     <ul class="list-inline social-icon">
-                        {{ with .Site.Params.contact.facebook }}
+                        {{ with .facebook }}
                         <li class="list-inline-item">
                             <a href="{{.}}">
                                 <i class="tf-ion-social-facebook"></i>
                             </a>
                         </li>
                         {{ end }}
-                        {{ with .Site.Params.contact.twitter }}
+                        {{ with .twitter }}
                         <li class="list-inline-item">
                             <a href="{{.}}">
                                 <i class="tf-ion-social-twitter"></i>
                             </a>
                         </li>
                         {{ end }}
-                        {{ with .Site.Params.contact.linkedin }}
+                        {{ with .linkedin }}
                         <li class="list-inline-item">
                             <a href="{{.}}">
                                 <i class="tf-ion-social-linkedin"></i>
                             </a>
                         </li>
                         {{ end }}
-                        {{ with .Site.Params.contact.dribbble }}
+                        {{ with .dribbble }}
                         <li class="list-inline-item">
                             <a href="{{.}}">
                                 <i class="tf-ion-social-dribbble"></i>
                             </a>
                         </li>
                         {{ end }}
-                        {{ with .Site.Params.contact.instagram }}
+                        {{ with .instagram }}
                         <li class="list-inline-item">
                             <a href="{{.}}">
                                 <i class="tf-ion-social-instagram"></i>
@@ -127,4 +140,6 @@
         {{ end }}
     </div>
 </section>
+{{ end }}
+{{ end }}
 {{ end }}
