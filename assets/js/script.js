@@ -11,6 +11,14 @@ if(window.location.pathname.match("^$|^\\/$|^\\/\\S{2}\\/$")) {
 else{
 	$('#preloader').hide();
 }
+function sleep(milliseconds) {
+	console.log("Sleeping")
+	const date = Date.now();
+	let currentDate = null;
+	do {
+		currentDate = Date.now();
+	} while (currentDate - date < milliseconds);
+}
 (function ($) {
 	"use strict";
 
@@ -275,14 +283,14 @@ else{
 	});
 	document.getElementById('navbar-switcher').addEventListener('click', function(e)
 	{
-		console.log(e);
-		if ($('#navigation')[0].classList.contains("show")) {
-			console.log("Setting background to initial",$('#content'))
+		if ($('#navigation')[0].classList.contains("collapsing")) {
+			return;
+		}
+		if ($('#navigation')[0].classList.contains("show") ) {
 			$('#content')[0].classList.remove("no-background");
 			$('#header')[0].classList.remove("show");
 		}
 		else {
-			console.log("Setting background to null",$('#content')[0])
 			$('#content')[0].classList.add("no-background");
 			$('#header')[0].classList.add("show");
 		}
