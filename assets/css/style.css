@@ -1033,24 +1033,24 @@ a:focus, a:hover {
     margin-bottom: 6px;
 }
 
-.social-icon {
+.social-icn {
     display: inline-block;
 }
 
-.social-icon li {
+.social-icn li {
     display: inline-block;
     margin-right: 10px;
 }
 
-.social-icon li a {
+.social-icn li a {
     display: block;
-    height: 30px;
-    width: 30px;
+    height: 25px;
+    width: 25px;
     text-align: center;
     color: #000000;
 }
 
-.social-icon li a i {
+.social-icn li a i {
     display: inline-block;
     font-size: 30px;
     line-height: 50px;
