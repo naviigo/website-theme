@@ -11,14 +11,6 @@ if(window.location.pathname.match("^$|^\\/$|^\\/\\S{2}\\/$")) {
 else{
 	$('#preloader').hide();
 }
-function sleep(milliseconds) {
-	console.log("Sleeping")
-	const date = Date.now();
-	let currentDate = null;
-	do {
-		currentDate = Date.now();
-	} while (currentDate - date < milliseconds);
-}
 (function ($) {
 	"use strict";
 
