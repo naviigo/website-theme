@@ -5,7 +5,7 @@
     --color-light-blu: #24dbfb;
     --color-select: #1294e5;
     --color-hover: #1294e590;
-    --color-navbar: #4c4c4c;
+    --color-navbar: #000;
     --color-grey: #777;
     --image-overlay: linear-gradient(rgba(18, 148, 229, 0.7), rgba(18, 148, 229, 0.7));
 }
@@ -368,7 +368,7 @@ a:focus, a:hover {
 }
 
 .title p {
-    color: #848484;
+    color: var(--color-grey);
     width: 80%;
     margin: 0 auto;
 }
@@ -540,6 +540,7 @@ a:focus, a:hover {
 
 .single-page-header .breadcrumb li a {
     color: var(--color-select);
+    mix-blend-mode: multiply;
 }
 
 .navigation {
@@ -1397,6 +1398,10 @@ a:focus, a:hover {
     }
 }
 
+.service-2 .service-item p {
+    color: var(--color-grey);
+}
+
 .service-2 .service-item {
     height: 100%;
     background: #fff;
@@ -2080,4 +2085,8 @@ a:focus, a:hover {
 /* Change the background color of the dropdown button when the dropdown content is shown*/
 .dropdown:hover .dropbtn {
     color: var(--color-select);
+}
+
+.becomeHost .title p {
+    color: var(--color-grey);
 }
