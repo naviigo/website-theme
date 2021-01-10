@@ -7,8 +7,8 @@
 <section class="section-reduced">
     <div class="container">
         <div class="row mb-5">
-            <div class="col-12 col-md-5 mt-5"
-                 style="background-image: url('{{ .mainImage }}'); background-repeat: no-repeat; background-size: contain">
+            <div class="col-12 col-md-5"
+                 style="background-image: url('{{ .mainImage | absURL }}'); min-height:200px; background-repeat: no-repeat; background-size: contain">
             </div>
             <div class="col-12 col-md-7">
                 {{ with .mainDescription }}
@@ -28,8 +28,8 @@
         </div>
         {{ end }}
         <div class="row mb-5">
-            <div class="col-12 col-md-5 mt-5"
-                 style="background-image: url('{{ .image }}'); background-repeat: no-repeat; background-size: contain">
+            <div class="col-12 col-md-5"
+                 style="background-image: url('{{ .image | absURL }}'); min-height:200px; background-repeat: no-repeat; background-size: contain">
             </div>
             <div class="col-12 col-md-7">
                 {{ with .description }}
