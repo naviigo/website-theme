@@ -2,7 +2,16 @@
 
 {{ partial "page-title.html" . }}
 
-{{ partial "about-sm.html" . }}
+
+{{ if .Site.Params.feature.aboutSm.enable }}
+
+    {{ $data := index .Site.Data .Site.Language.Lang }}
+    {{ with $data.aboutSm }}
+
+        {{ partial "about-sm.html" . }}
+
+    {{ end }}
+{{ end }}
 
 {{ partial "philosophy.html" . }}
 

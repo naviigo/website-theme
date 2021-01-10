@@ -1,14 +1,10 @@
-{{ if .Site.Params.feature.aboutSm.enable }}
-
-{{ $data := index .Site.Data .Site.Language.Lang }}
-{{ with $data.aboutSm }}
-
 {{ "<!-- Start About Section -->" | safeHTML }}
 <section class="section-reduced">
     <div class="container">
         <div class="row mb-5">
-            <div class="col-12 col-md-5"
-                 style="background-image: url('{{ .mainImage | absURL }}'); min-height:200px; background-repeat: no-repeat; background-size: contain">
+            <div class="col-12 col-md-5">
+                <img class="rounded shadow w-100"
+                     src="{{ .mainImage | absURL }}"/>
             </div>
             <div class="col-12 col-md-7">
                 {{ with .mainDescription }}
@@ -28,8 +24,9 @@
         </div>
         {{ end }}
         <div class="row mb-5">
-            <div class="col-12 col-md-5"
-                 style="background-image: url('{{ .image | absURL }}'); min-height:200px; background-repeat: no-repeat; background-size: contain">
+            <div class="col-12 col-md-5">
+                <img class="rounded shadow w-100"
+                     src="{{ .image | absURL }}"/>
             </div>
             <div class="col-12 col-md-7">
                 {{ with .description }}
@@ -41,5 +38,3 @@
     </div>
 </section>
 {{ "<!-- End About section -->" | safeHTML }}
-{{ end }}
-{{ end }}
