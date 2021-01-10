@@ -34,7 +34,7 @@
                         {{ "<!-- plan description -->" | safeHTML }}
                         <ul class="pricing-features">
                             {{ range .featurelist }}
-                            <li>{{.item}}</li>
+                            <li>{{.item | safeHTML }}</li>
                             {{ end }}
                         </ul>
                         {{ "<!-- signup button -->" | safeHTML }}
