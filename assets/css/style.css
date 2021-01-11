@@ -976,7 +976,7 @@ a:focus, a:hover {
 /*=================================================================
   Contact
   ==================================================================*/
-.register-form #register-submit {
+.register-form #download-submit {
     border: none;
     padding: 9px 0;
     width: 100%;
@@ -998,7 +998,7 @@ a:focus, a:hover {
     z-index: 1;
     margin-top: -100px;
     position: absolute;
-    background-color: #d8000c;
+    background-color: var(--color-light-blu);
 }
 
 .contact-form {
