@@ -1,0 +1,33 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+{{ with $data.hostSm }}
+{{ "<!-- Start host waiting list Section -->" | safeHTML }}
+<section class="section-reduced">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 col-md-7 m-auto">
+                {{ with .waitingTitle }}
+                <p>{{ . | markdownify }}</p>
+                {{ end }}
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col-12 col-md-5">
+                <img class="rounded w-100"
+                     src="{{ .waitingImage | absURL }}"/>
+            </div>
+            <div class="col-12 col-md-7">
+                {{ with .waitingDescription }}
+                <p>{{ . | markdownify }}</p>
+                {{ end }}
+                <form class="subscribe-form col-5">
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="email"  placeholder='{{ i18n "email" }}'>
+                    </div>
+                    <button type="submit" id="register-submit" class="btn btn-main-sm">{{ $.Site.Params.footerSubscribeButton }}</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{{ "<!-- End host waiting list section -->" | safeHTML }}
+{{ end }}

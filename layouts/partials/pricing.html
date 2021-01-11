@@ -39,7 +39,7 @@
                         </ul>
                         {{ "<!-- signup button -->" | safeHTML }}
                         <div class="bottom mb-3">
-                            <a class="btn btn-main" href="{{.btnURL}}">{{.btnText}}</a>
+                            <a class="btn btn-main" href="{{.btnURL | relLangURL }}">{{.btnText}}</a>
                         </div>
                     </div>
                 </div>
