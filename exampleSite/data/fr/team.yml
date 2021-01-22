@@ -4,7 +4,7 @@ title   : FRANCAIS Our Team.
 subtitle: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum reiciendis quasi itaque, obcaecati atque sit!
 
 member  :
-  - image         : images/team/member-1.jpg
+  - image         : images/team/member-1.webp
     name          : FRANCAIS Shawshank Redemption
     designation   : Head Of Marketing
     description   : >
@@ -14,7 +14,7 @@ member  :
     gplusURL      : https://plus.google.com/
     dribbbleURL   : https://dribbble.com/
 
-  - image         : images/team/member-2.jpg
+  - image         : images/team/member-2.webp
     name          : Leo Departure
     designation   : Web Developer
     description   : >
@@ -24,7 +24,7 @@ member  :
     gplusURL      : https://plus.google.com/
     dribbbleURL   : https://dribbble.com/
 
-  - image         : images/team/member-3.jpg
+  - image         : images/team/member-3.webp
     name          : Remoni Rio
     designation   : Senior Developer
     description   : >
@@ -34,7 +34,7 @@ member  :
     gplusURL      : https://plus.google.com/
     dribbbleURL   : https://dribbble.com/
 
-  - image         : images/team/member-4.jpg
+  - image         : images/team/member-4.webp
     name          : Lawandeski Roma
     designation   : Designer
     description   : >

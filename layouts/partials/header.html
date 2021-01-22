@@ -8,7 +8,7 @@
     {{ $data := index .Site.Data .Site.Language.Lang }}
     {{ with $data.register }}
     <div class="ribbon left blue">
-        <a>{{ .status }}</a>
+        <div>{{ .status }}</div>
     </div>
     {{ end }}
     {{ end }}
@@ -51,7 +51,7 @@
                             {{ end }}
                             <!-- Language dropdown -->
                             <li class="dropdown nav-item">
-                                <a class="dropbtn nav-link"><img src='/images/logos/lang-{{ .Site.Language }}.gif' alt="IMAGE" style="margin-bottom: 4px"/>
+                                <a href="#" class="dropbtn nav-link"><img src='/images/logos/lang-{{ .Site.Language }}.gif' alt="IMAGE" style="margin-bottom: 4px"/>
                                     {{ i18n "select-language"}}
                                 </a>
                                 <div class="dropdown-content">

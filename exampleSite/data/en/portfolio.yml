@@ -18,25 +18,25 @@ filtermenu :
 
 item   :
   - title : AirBnB Postcard
-    image : images/portfolio/portfolio-1.jpg
+    image : images/portfolio/portfolio-1.webp
     category  : photography
 
   - title : D Design
-    image : images/portfolio/portfolio-2.jpg
+    image : images/portfolio/portfolio-2.webp
     category  : ios, design
 
   - title : Xbox 360
-    image : images/portfolio/portfolio-3.jpg
+    image : images/portfolio/portfolio-3.webp
     category  : photography, development
 
   - title : Ballon Card
-    image : images/portfolio/portfolio-4.jpg
+    image : images/portfolio/portfolio-4.webp
     category  : ios
 
   - title : Ready Toons
-    image : images/portfolio/portfolio-5.jpg
+    image : images/portfolio/portfolio-5.webp
     category  : design
 
   - title : Illustration
-    image : images/portfolio/portfolio-6.jpg
+    image : images/portfolio/portfolio-6.webp
     category  : development
