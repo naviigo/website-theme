@@ -2,7 +2,7 @@
 {{ with $data.about }}
     {{ if .enable }}
     {{ "<!-- About Section Start -->" | safeHTML }}
-    <section class="about section-xs bg-gray" id="about">
+    <section class="section-bg about section-xs" id="about">
         <div class="container">
             {{ range .item }}
             <div class="row mt-50 justify-content-center" {{ if .positionRight }} style="flex-direction: row-reverse;" {{end }}>

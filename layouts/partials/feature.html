@@ -3,7 +3,7 @@
 {{ $data := index .Site.Data .Site.Language.Lang }}
 {{ with $data.feature }}
     {{ "<!-- Feature Section Start -->" | safeHTML }}
-    <section class="services section-xs" id="services">
+    <section class="section-bg services section-xs" id="services">
         <div class="container">
             <div class="row">
                 {{ range .item }}
