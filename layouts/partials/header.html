@@ -16,8 +16,8 @@
         <div class="row">
             <div class="col-md-12">
                 <nav class="navbar navbar-expand-md">
-                    <a class="navbar-brand {{ if .Site.Params.preview }}navbar-brand-center{{end}}" href="{{ .Site.BaseURL | absURL}}"style="z-index: 2">
-                        <img src="{{ .Site.Params.logo | absURL }}" width="180px" alt="{{ .Site.Title }}" >
+                    <a class="navbar-brand {{ if .Site.Params.preview }}navbar-brand-center{{end}}" href="{{ .Site.BaseURL | absURL}}index.html"style="z-index: 2">
+                        <img src="{{ .Site.Params.logo | absURL }}index.html" width="180px" alt="{{ .Site.Title }}" >
                     </a>
                     <button id="navbar-switcher" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
                         aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,7 +28,7 @@
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item">
                                 <a class="nav-link"
-                                    href="{{ .Site.BaseURL | absURL }}">{{ with .Site.Params.home }}{{ . }}{{ end }}</a>
+                                    href="{{ .Site.BaseURL | absURL }}index.html">{{ with .Site.Params.home }}{{ . }}{{ end }}</a>
                             </li>
                             {{ range .Site.Menus.nav }}
                             {{ if .HasChildren }}
