@@ -409,7 +409,9 @@ else{
 	}, false);
 })(jQuery);
 
-
+function sendEvent(event) {
+	gtag('event', 'register', {'package': event});
+}
 window.marker = null;
 
 
