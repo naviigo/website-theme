@@ -5,18 +5,18 @@
     <title>Naviigo</title>
     <meta name="description" content="Naviigo SLOGAN"/>
     <!-- End -->
-    <link rel="canonical" href="{{ .Permalink }}"/>
+    <link rel="canonical" href="{{ .Permalink }}index.html"/>
     <meta name="robots" content="noindex">
     <meta charset="utf-8"/>
     <noscript>
-        <meta http-equiv="refresh" content="0; url={{ .Permalink }}"/>
+        <meta http-equiv="refresh" content="0; url={{ .Permalink }}index.html"/>
     </noscript>
     <script>
         ;(function () {
             // Only do i18n at root,
             // otherwise, redirect immediately
             if (window.location.pathname !== '/') {
-                window.location.replace('{{ .Permalink }}')
+                window.location.replace('{{ .Permalink }}index.html')
                 return
             }
 
@@ -53,16 +53,16 @@
                 var preferLang = getFirstBrowserLanguage()
                 if (preferLang.indexOf('it') !== -1) {
                     // visitor prefers Italian
-                    window.location.replace('/it/')
+                    window.location.replace('/it/index.html')
                 } else if (preferLang.indexOf('de') !== -1) {
                     // visitor prefers Italian
-                    window.location.replace('/de/')
+                    window.location.replace('/de/index.html')
                 } else if (preferLang.indexOf('fr') !== -1) {
                     // visitor prefers Italian
-                    window.location.replace('/fr/')
+                    window.location.replace('/fr/index.html')
                 } else {
                     // fallback to English
-                    window.location.replace('/en/')
+                    window.location.replace('/en/index.html')
                 }
             }
         })()
@@ -70,6 +70,6 @@
 </head>
 <body>
 <h1>Rerouting</h1>
-<p>You should be rerouted in a jiff, if not, <a href="{{ .Permalink }}">click here</a>.</p>
+<p>You should be rerouted in a jiff, if not, <a href="{{ .Permalink }}index.html">click here</a>.</p>
 </body>
 </html>
