@@ -759,7 +759,7 @@ a:focus, a:hover {
     }
 
     .hero-area {
-        padding: 0 0;
+        padding: 0 0 30px;
     }
 
     .hero-area .block {
