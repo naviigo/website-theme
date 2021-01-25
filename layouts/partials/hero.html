@@ -8,9 +8,11 @@
             <div class="col-md-6">
                 <div class="video-player">
                     <img class="img-fluid rounded" src="{{ with .videoThumb }}{{.| absURL }}{{ end }}" alt="video-thumb">
+                    {{ if $.Site.Params.feature.hero.movie }}
                     <a class="play-icon" href="javascript:void(0)">
                         <i class="tf-ion-play" data-video="{{ with .videoURL }}{{.}}{{ end }}?autoplay=1"></i>
                     </a>
+                    {{ end }}
                 </div>
             </div>
             <div class="col-md-6">
