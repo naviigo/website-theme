@@ -11,10 +11,17 @@
     </script>
     <script>
         const expectedHost = new URL({{ .Permalink }});
+
         if(window.location.hostname !== "localhost" && window.location.hostname !== "127.0.0.1")
         {
             if(window.location.hostname !== expectedHost.hostname){
-                window.location.replace('{{ .Permalink }}')
+                if(expectedHost.pathname.endsWith(".html")){
+                    window.location.replace('{{ .Permalink }}')
+                }
+                else
+                {
+                    window.location.replace('{{ .Permalink }}index.html')
+                }
             }
         }
     </script>
