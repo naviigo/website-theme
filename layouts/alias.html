@@ -44,7 +44,14 @@
                 }
                 return 'en'
             }
-
+            const expectedHost = new URL({{ .Permalink }});
+            if(window.location.hostname !== "localhost" && window.location.hostname !== "127.0.0.1")
+            {
+                if(window.location.hostname !== expectedHost.hostname){
+                    window.location.replace('{{ .Permalink }}index.html')
+                    return;
+                }
+            }
             const referrer = document.referrer ? new URL(document.referrer):undefined;
             if(referrer && referrer.hostname === window.location.hostname) {
                 window.location.replace(referrer.pathname.match("^(\\/[^\\/?]+)")[1]+"/index.html")
