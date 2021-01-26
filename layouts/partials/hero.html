@@ -39,12 +39,12 @@
                                 <div class="row">
                                     <div class="col-6">
                                         <a {{ if $.Site.Params.preview }}id="hideiOS"{{ end }}href="{{ if $.Site.Params.preview }}#{{ else }}{{ $.Site.Params.feature.hero.badgeiOS | absURL }}{{ end }}" {{ if not ($.Site.Params.preview)  }}target="_blank"{{ end }} >
-                                        <img class="app-badge" src="/images/App_Store_Badge.svg" alt="App Store"/>
+                                        <img class="app-badge" src='{{"/images/App_Store_Badge.svg" | absURL }}' alt="App Store"/>
                                     </a>
                                     </div>
                                     <div class="col-6">
                                         <a {{ if $.Site.Params.preview }}id="hideAndroid"{{ end }}href="{{ if $.Site.Params.preview }}#{{ else }}{{ $.Site.Params.feature.hero.Android | absURL }}{{ end }}" {{ if not ($.Site.Params.preview)  }}target="_blank"{{ end }} >
-                                        <img class="app-badge" src="/images/Google_Play_Store_badge.svg" alt="Google Play"/>
+                                        <img class="app-badge" src='{{"/images/Google_Play_Store_badge.svg" | absURL }}' alt="Google Play"/>
                                     </a>
                                     </div>
                                 </div>
