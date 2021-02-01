@@ -19,7 +19,7 @@ DefaultContentLanguage = "en"
 
 # Site Params
 [params]
-logo = "images/logo.webp"
+logo = "images/logo.png"
 
 # Gestion des langues : FR / EN / NL / DE
 [[Params.listeLangues]]
@@ -41,7 +41,7 @@ title = "FRANCAIS Example site multi-language"
 dateFormat = "2 January 2006"
 
 home = "FR Home"
-logo = "images/logo.webp"
+logo = "images/logo.png"
 menufixed = false
 
 footerDescription = "FRANCAIS Integer posuere erat a ante venenati dapibus posuere velit aliquet. Fusce dapibus, tellus cursus commodo, tortor mauris sed posuere."
@@ -58,7 +58,7 @@ description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. At quo 
 button  = true
 btnText = "Know More"
 btnURL  = "https://themefisher.com/"
-videoThumb = "images/slider/video-player-thumb.webp"
+videoThumb = "images/slider/video-player-thumb.png"
 videoURL   = "https://www.youtube.com/embed/g3-VxLQO7do"
 
 # About 2 Section
@@ -90,12 +90,12 @@ dribbble= "https://dribbble.com/"
 instagram= "https://www.instagram.com/"
 mapLatitude = "51.507351"
 mapLongitude= "-0.127758"
-mapMarker   = "images/marker.webp"
+mapMarker   = "images/marker.png"
 
 # Call to Action Section on About Page
 [Languages.fr.params.cta]
 enable  = true
-bg      = "images/call-to-action/call-to-action-bg-2.webp"
+bg      = "images/call-to-action/call-to-action-bg-2.png"
 title   = "FRANCAIS Let's Create Something Together"
 subtitle= "Proin gravida nibh vel velit auctor aliquet. Aenean sollicudin bibendum auctor, <br> nisi elit consequat ipsum, nesagittis sem nid elit. Duis sed odio sitain elit."
 btnText = "Nous contacter"
@@ -107,7 +107,7 @@ languageCode = "en-us"
 title = "Example site multi-language"
 dateFormat = "January 2, 2006"
 home = "EN Home"
-logo = "images/logo.webp"
+logo = "images/logo.png"
 menufixed = false
 
 footerDescription = "Integer posuere erat a ante venenati dapibus posuere velit aliquet. Fusce dapibus, tellus cursus commodo, tortor mauris sed posuere."
@@ -130,7 +130,7 @@ description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. At quo 
 button  = true
 btnText = "Know More"
 btnURL  = "https://themefisher.com/"
-videoThumb = "images/slider/video-player-thumb.webp"
+videoThumb = "images/slider/video-player-thumb.png"
 videoURL   = "https://www.youtube.com/embed/g3-VxLQO7do"
 
 # About 2 Section
@@ -162,12 +162,12 @@ dribbble= "https://dribbble.com/"
 instagram= "https://www.instagram.com/"
 mapLatitude = "51.507351"
 mapLongitude= "-0.127758"
-mapMarker   = "images/marker.webp"
+mapMarker   = "images/marker.png"
 
 # Call to Action Section on About Page
 [Languages.en.params.cta]
 enable  = true
-bg      = "images/call-to-action/call-to-action-bg-2.webp"
+bg      = "images/call-to-action/call-to-action-bg-2.png"
 title   = "Let's Create Something Together"
 subtitle= "Proin gravida nibh vel velit auctor aliquet. Aenean sollicudin bibendum auctor, <br> nisi elit consequat ipsum, nesagittis sem nid elit. Duis sed odio sitain elit."
 btnText = "Contact Us"
