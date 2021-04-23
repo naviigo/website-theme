@@ -14,6 +14,25 @@
 {{ end }}
 </title>
 
+{{ with .Site.Params.matomo }}
+<!-- Matomo -->
+<script type="text/javascript">
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+        var u="//{{ .url }}/";
+        _paq.push(['setTrackerUrl', u+'{{ .fileName }}.php']);
+        _paq.push(['setSiteId', '{{ .ID }}']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.src=u+'{{ .fileName }}.js'; s.parentNode.insertBefore(g,s);
+    })();
+</script>
+
+<noscript><p><img src="//track.visin.ch/matomo.php?idsite={{ .ID }}&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Matomo Code -->
+{{ end }}
 {{ "<!-- Mobile Specific Meta -->" | safeHTML }}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
